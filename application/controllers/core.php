@@ -10,15 +10,6 @@ class Core extends CI_Controller{
 
 		$this->load->library('parser');
 		$this->load->helper('url'); 
-
-		if(isset($_POST['search_submit'])){
-
-			$type = $_POST['type'];
-			$search_term = $_POST['search_term'];
-			$field = $_POST['field'];
-
-			$this->search($type, $search_term, $field);
-		}
 		
 		$this->home();
 
@@ -54,17 +45,30 @@ class Core extends CI_Controller{
 		
 		$this->load->model('search');
 
-		$type = $this->input->post('type');
-		$field = $this->input->post('field');
-		$search_term = $this->input->post('search_term');
+		$this->load->helper('form');
+		
+		$this->load->library('form_validation');
+
+		$this->form_validation->set_rules('search_term', 'required');
 
 		$data = array(
-			'type' => $type,
-			'field' => $field,
-			'search_term' => $search_term
+			'type' => $this->input->post('type'),
+			'field' => $this->input->post('field'),
+			'search_term' => $this->input->post('search_term')
 			);
 
-		$this->search->basic($data);
+		
+
+		if($this->form_validation->run() == FALSE){
+			$this->load->view('home');
+			print("shit failed");
+		}else{
+
+			$results = $this->search->basic($data);
+
+			$this->load->view('results', array('search_results' => $results));
+
+	}
 
 		$this->load->view('footer');
 
@@ -75,8 +79,6 @@ class Core extends CI_Controller{
 		$this->load->view('header');
 
 		$this->parser->parse('results', $data);
-
-		$data['score'] = $this->search->basic();
 
 		$this->load->view('footer');
 	}

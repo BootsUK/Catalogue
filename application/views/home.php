@@ -2,25 +2,35 @@
 
 echo form_open('core/search');
 
+echo validation_errors();
+
 $type = array(
-	'all' => 'All',
-	'template' => 'Template',
-	'design' => 'Design',
-	'component' => 'Component'
+	'templates' => 'Template',
+	'layouts' => 'Layout',
+	'components' => 'Component'
 	);
 
-$search_term = array(
-	'all' => 'All',
+$field = array(
 	'title' => 'Title',
 	'description' => 'Description',
 	'id' => 'ID'
 	);
 
-echo form_dropdown('Select', $type, 'All');
+echo form_dropdown('type', $type, 'templates');
 
-echo form_dropdown('Select', $search_term, 'All');
+echo form_dropdown('field', $field, 'title');
 
-echo form_input();
+echo form_input('search_term', 'Search');
+
+$data = array(
+    'name' => 'submit',
+    'id' => 'submit',
+    'value' => 'true',
+    'type' => 'submit',
+    'content' => 'Submit'
+);
+
+echo form_button($data);
 
 echo form_close();
 
