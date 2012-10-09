@@ -20,7 +20,7 @@ class Search extends CI_Controller{
 
 		$this->load->view('header');
 		
-		$this->load->model('search');
+		$this->load->model('search_model');
 
 		$this->load->helper('form');
 		
@@ -36,7 +36,7 @@ class Search extends CI_Controller{
 
 
 		if($this->form_validation->run() == true){
-			$results = $this->search->basic($data);
+			$results = $this->search_model->basic($data);
 			if($results == true){
 				
 				$this->load->view('results', array('search_results' => $results));
