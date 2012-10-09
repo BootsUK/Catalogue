@@ -57,31 +57,21 @@ class Core extends CI_Controller{
 			'search_term' => $this->input->post('search_term')
 			);
 
-		
 
-		if($this->form_validation->run() == FALSE){
-			$this->load->view('home');
-			print("shit failed");
-		}else{
-
+		if($this->form_validation->run() == true){
 			$results = $this->search->basic($data);
-
-			$this->load->view('results', array('search_results' => $results));
-
-	}
-
-		$this->load->view('footer');
-
-	}
-
-	public function results(){
-
-		$this->load->view('header');
-
-		$this->parser->parse('results', $data);
+			if($results == true){
+				
+				$this->load->view('results', array('search_results' => $results));
+			}else{
+				echo "No results found!";
+			}
+			
+		}else{
+			echo "Stuff hit the fan...";
+		}
 
 		$this->load->view('footer');
 	}
-
 	
 }

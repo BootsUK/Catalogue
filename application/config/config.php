@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '/Catalogue';
+$config['base_url']	= 'http://evdatacenter.co.uk/boots/';
 
 /*
 |--------------------------------------------------------------------------

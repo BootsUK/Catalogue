@@ -14,12 +14,10 @@ class Search extends CI_Model{
 		if($query->num_rows) {
 			print("it worked");
 
-			// print_r($query->result_array());
-			
     		return $query->result_array();
     		
     	}else{
-    		print("it didn't work");
+    		
             return false; 
 		}
 	}
