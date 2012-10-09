@@ -21,9 +21,11 @@ class Core extends CI_Controller{
 
 		$this->load->helper('form');
 
-		$this->load->view('home');
+		$this->load->view('login_view');
 
 		$this->load->view('search_view');
+
+		$this->load->view('home');
 
 		$this->load->view('footer');
 
