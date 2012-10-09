@@ -11,16 +11,7 @@ class Core extends CI_Controller{
 		$this->load->library('parser');
 		$this->load->helper('url'); 
 		
-		
-
-
-		#Remove this
-		$user = 0;
-		if($user == 0){
-			$this->login();
-		}else{
-			$this->home();
-		}
+		$this->home();
 
 	}
 
@@ -30,29 +21,14 @@ class Core extends CI_Controller{
 
 		$this->load->helper('form');
 
+		$this->load->view('nav_view');
+		
 		$this->load->view('search_view');
 
 		$this->load->view('home');
 
-		// $this->load->view('login_view');
-
 		$this->load->view('footer');
 
 	}
 
-	public function login(){
-
-		$this->load->view('header');
-
-		$this->load->helper('form');
-
-		$this->load->view('login_view');
-
-		$this->load->view('home');
-
-		$this->load->view('footer');
-	}
-
-	
-	
 }

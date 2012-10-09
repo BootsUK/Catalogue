@@ -6,6 +6,16 @@ class Admin extends CI_Controller{
 		parent::__construct();
 	}
 
+	public function index(){
+
+		$this->dashboard();
+	}
+
+	public function dashboard(){
+
+		print("Dashboard stuff goes here");
+	}
+
 	public function add_example(){
 
 	}
