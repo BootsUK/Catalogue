@@ -2,28 +2,33 @@
 
 class Core extends CI_Controller{
 
-	public static function index(){
+	public function __construct(){
+		parent::__construct();
+	}
 
-		$this->load->search('template');
+	public function index(){
+
 		$this->load->library('parser');
 		$this->load->helper('url'); 
 
-		$type = $_POST['type'];
-		$search_term = $_POST['search_term'];
-		$field = $_POST['field'];
-
 		if(isset($_POST['search_submit'])){
+
+			$type = $_POST['type'];
+			$search_term = $_POST['search_term'];
+			$field = $_POST['field'];
 
 			$this->search($type, $search_term, $field);
 		}
 		
-		$this->login();
+		$this->home();
 
 	}
 
-	public static function home(){
+	public function home(){
 
 		$this->load->view('header');
+
+		$this->load->helper('form');
 
 		$this->load->view('home');
 
@@ -31,20 +36,27 @@ class Core extends CI_Controller{
 
 	}
 
-	public static function login(){
+	public function login(){
 
 	}
 
-	public static function logout(){
+	public function logout(){
 
 	}
 
-	public static function signup(){
+	public function signup(){
 
 	}
 
-	public static function search($type, $search_term, $field){
+	public function search(){
 		
+		$this->load->view('header');
+		
+		$this->load->model('search');
+
+		$type = $this->input->post('type');
+		$field = $this->input->post('field');
+		$search_term = $this->input->post('search_term');
 
 		$data = array(
 			'type' => $type,
@@ -54,11 +66,14 @@ class Core extends CI_Controller{
 
 		$this->search->basic($data);
 
+		$this->load->view('footer');
+
 	}
 
-	public static function results(){
+	public function results(){
 
 		$this->load->view('header');
+
 		$this->parser->parse('results', $data);
 
 		$data['score'] = $this->search->basic();

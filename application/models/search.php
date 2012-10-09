@@ -7,7 +7,9 @@ class Search extends CI_Model{
 
 	}
 
-	public static function basic($data){
+	public function basic($data){
+
+		print_r($data['type']);
 
 		$query = $this->db->query("SELECT * FROM " . $data['type'] . " WHERE " . $data['field'] . "LIKE '%" . $data['search_term'] . "%'");
 	

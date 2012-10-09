@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://evdatacenter.co.uk/catalogue';
+$config['base_url']	= '/Catalogue';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'xPY93pHy466eSv5vmTKF93xbaXYx25Tw';
 
 /*
 |--------------------------------------------------------------------------
