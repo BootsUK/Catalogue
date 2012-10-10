@@ -32,7 +32,7 @@ class Model_users extends CI_Model{
 			'key' => $key,
 			'first_name' => $this->input->post('first_name'),
 			'last_name' => $this->input->post('last_name'),
-			'user_name' =>  $this->input->post('user_name')
+			'company' => $this->input->post('company')
 			);
 
 		$query = $this->db->insert('temp_users', $data);
@@ -73,8 +73,7 @@ class Model_users extends CI_Model{
 				'password' => $row->password,
 				'first_name' => $row->first_name,
 				'last_name'=> $row->last_name,
-				'age' => $row->age,
-				'user_name' => $row->user_name
+				'company' => $this->input->post('company')
 			);
 
 			$did_add_user = $this->db->insert('users', $data);

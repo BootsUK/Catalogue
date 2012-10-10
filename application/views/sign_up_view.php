@@ -4,7 +4,7 @@
 
 <?php 
 
-echo form_open('core/sign_up_validation');
+echo form_open('account/sign_up_validation');
 
 echo validation_errors();
 
