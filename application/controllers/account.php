@@ -1,23 +1,25 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 class Account extends CI_Controller {
 
 
-	public function index()
-	{
+	public function __construct(){
+		parent::__construct();
+		$this->load->helper('form');
+	}
+
+	public function index(){
 		$this->login();
 	}
 
 	public function login(){
-		$this->load->view('head');
-		$this->load->view('login');
+		$this->load->view('header');
+		$this->load->view('login_view');
 		$this->load->view('footer');
 	}
 
 	public function check_credentials(){
-		$this->load->view('head');
+		$this->load->view('header');
 
 		$this->load->library('form_validation');
 
@@ -36,16 +38,16 @@ class Account extends CI_Controller {
 
 		}else{
 
-			$this->load->view('login');
+			$this->load->view('login_view');
 		}
 		$this->load->view('footer');
 	}
 
 	public function validate_credentials(){
-		$this->load->view('head');
-		$this->load->model('model_users');
+		$this->load->view('header');
+		$this->load->model('user_model');
 
-		if($this->model_users->can_log_in()){
+		if($this->user_model->can_log_in()){
 			return true;
 		}else{
 			$this->form_validation->set_message('validate_credentials', 'Incorrect login/password.');
@@ -55,7 +57,7 @@ class Account extends CI_Controller {
 	}
 
 	public function members(){
-		$this->load->view('head');
+		$this->load->view('header');
 		if($this->session->userdata('is_logged_in')){
 			
 			$this->load->model('model_user_data');
@@ -69,27 +71,28 @@ class Account extends CI_Controller {
 	}
 
 	public function restricted(){
-		$this->load->view('head');
+		$this->load->view('header');
 		$this->load->view('restricted');
 		$this->load->view('footer');
 	}
 
 	public function logout(){
-		$this->load->view('head');
+		$this->load->view('header');
 		$this->session->sess_destroy();
-		redirect('core/login');
-		$this->load->head('footer');
+		$this->load->view('logout_view');
+		redirect('account/login');
+		$this->load->header('footer');
 	}
 
 	public function signup(){
-		$this->load->view('head');
-		$this->load->view('sign_up');
+		$this->load->view('header');
+		$this->load->view('sign_up_view');
 		$this->load->view('footer');
 	}
 
 	public function sign_up_validation(){
 
-		$this->load->view('head');
+		$this->load->view('header');
 		$this->load->library('form_validation');
 		$this->load->view('thank_you');
 		$this->form_validation->set_rules('email', 'E-Mail', 'required|trim|valid_email|is_unique[users.email]|max_length[125]');
@@ -105,7 +108,7 @@ class Account extends CI_Controller {
 			$key = md5(uniqid());
 
 			$this->load->library('email', array('mailtype'=>'html'));
-			$this->load->model('model_users');
+			$this->load->model('user_model');
 
 			$message = "<p>Thank you for signing up!</p>";
 			$message .= "<p><a href='" . base_url() . "account/register_user/$key'>Click to submit an account request.</a></p>";
@@ -115,7 +118,7 @@ class Account extends CI_Controller {
 			$this->email->subject('Please confirm a new Boots technical catalogue account');
 			$this->email->message($message);
 
-				if($this->model_users->add_temp_user($key)){
+				if($this->user_model->add_temp_user($key)){
 					if($this->email->send()){
 				
 					echo "Security e-mail has been sent.";
@@ -137,15 +140,15 @@ class Account extends CI_Controller {
 
 	}
 
-	public function signup($key){
+	public function confirm_signup($key){
 
-		$this->load->view('head');
-		$this->load->view('main_nav');
-		$this->load->model('model_users');
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->model('user_model');
 
-		if($this->model_users->is_key_valid($key)){
+		if($this->user_model->is_key_valid($key)){
 
-			if($newemail = $this->model_users->add_user($key)){
+			if($newemail = $this->user_model->add_user($key)){
 				echo "<p>Success!</p>";
 				$data = array(
 					'email' => $newemail,
@@ -153,7 +156,7 @@ class Account extends CI_Controller {
 					);
 
 				$this->session->set_userdata($data);
-				redirect('core/members');
+				redirect('account/members');
 			}else{
 				echo "Registration failed.";
 			}
@@ -168,49 +171,3 @@ class Account extends CI_Controller {
 	}
 
 }
-
-=======
-=======
->>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
-class Account extends CI_Controller{
-
-	public function __construct(){
-		parent::__construct();
-	}
-
-	public function index(){
-
-		/* If statement here to check cookie?? */
-		$this->login();
-	}
-
-	public function login(){
-
-		print("Log-in script here");
-	}
-
-	public function logout(){
-
-		print("Log-out script here");
-	}
-
-	public function signup(){
-
-		print("Sign-up script here");
-	}
-
-	public function signup_validate(){
-
-		print("Validate sign-up here");
-	}
-
-	public function signin(){
-
-		print("Sign-in script here");
-	}
-<<<<<<< HEAD
-}
->>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
-=======
-}
->>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f

@@ -1,37 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div class="input_form">
-<?php 
+<a href="<?php echo base_url() . "account/signup"; ?>">Sign-up</a>
 
-echo form_open('core/check_credentials');
-
-echo validation_errors();
-
-echo "<p>Enter your e-mail: ";
-echo form_input('email');
-echo "</p>";
-
-echo "<p>Enter your password: ";
-echo form_password('password');
-echo "</p>";
-
-echo "<p>";
-echo form_submit('login_submit', 'Login');
-echo "</p>";
-
-echo form_close();
-
-?>
-</div>
-<a href="<?php echo base_url() . "core/sign_up"; ?>">Sign-up</a>
-=======
-=======
->>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
 <p><b>Login</b></p>
 
 <?php 
 
 echo form_open('account/signin');
+
+echo validation_errors();
 
 echo form_input('email', 'E-Mail');
 
@@ -49,9 +24,4 @@ echo form_button($data);
 
 echo close_form();
 
-<<<<<<< HEAD
 ?>
->>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
-=======
-?>
->>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
