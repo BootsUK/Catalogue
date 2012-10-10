@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class Account extends CI_Controller {
 
 
@@ -169,6 +170,8 @@ class Account extends CI_Controller {
 }
 
 =======
+=======
+>>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
 class Account extends CI_Controller{
 
 	public function __construct(){
@@ -205,5 +208,9 @@ class Account extends CI_Controller{
 
 		print("Sign-in script here");
 	}
+<<<<<<< HEAD
+}
+>>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
+=======
 }
 >>>>>>> 6032359b0ec0e2183dc15b242c0196d16539f05f
