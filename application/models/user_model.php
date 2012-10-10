@@ -1,6 +1,6 @@
 <?php
 
-class Model_users extends CI_Model{
+class User_model extends CI_Model{
 	
 	public function __construct(){
 		parent::__construct();
@@ -73,7 +73,7 @@ class Model_users extends CI_Model{
 				'password' => $row->password,
 				'first_name' => $row->first_name,
 				'last_name'=> $row->last_name,
-				'company' => $this->input->post('company')
+				'company' => $row->company
 			);
 
 			$did_add_user = $this->db->insert('users', $data);

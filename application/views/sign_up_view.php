@@ -16,10 +16,6 @@ echo "<p>Enter your last name: ";
 echo form_input('last_name', $this->input->post('last_name'));
 echo "</p>";
 
-echo "<p>Enter a username: ";
-echo form_input('user_name', $this->input->post('user_name'));
-echo "</p>";
-
 echo "<p>Enter a password: ";
 echo form_password('password');
 echo "</p>";
@@ -32,7 +28,11 @@ echo "<p>Enter your e-mail: ";
 echo form_input('email', $this->input->post('email'));
 echo "</p>";
 
-echo "<p>";
+echo "<p>Company name: ";
+echo form_input('company', $this->input->post('company'));
+echo "</p>";
+
+echo "<p>Company name: ";
 echo form_submit('sign_up_submit', 'Sign-up');
 echo "</p>";
 

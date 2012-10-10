@@ -53,6 +53,7 @@ class Account extends CI_Controller {
 			$this->form_validation->set_message('validate_credentials', 'Incorrect login/password.');
 			return false;
 		}
+		
 		$this->load->view('footer');
 	}
 
@@ -60,8 +61,6 @@ class Account extends CI_Controller {
 		$this->load->view('header');
 		if($this->session->userdata('is_logged_in')){
 			
-			$this->load->model('model_user_data');
-
 			$this->load->view('members');
 
 		}else{
@@ -100,38 +99,42 @@ class Account extends CI_Controller {
 		$this->form_validation->set_rules('last_name', 'Last name', 'required|trim|max_length[75]');
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[7]|max_length[50]');
 		$this->form_validation->set_rules('cpassword', 'Confirm Password', 'required|trim|matches[password]');
+		$this->form_validation->set_rules('company', 'Company', 'trim|max_length[125]');
 		$this->form_validation->set_message('is_unique', "already exists!");
 
 		if($this->form_validation->run()){
 			
 			$key = md5(uniqid());
 
-			$this->load->library('email', array('mailtype'=>'html'));
 			$this->load->model('user_model');
+			$this->load->library('email', array('mailtype'=>'html'));
 
-			$message = "<p>Thank you for signing up!</p>";
-			$message .= "<p><a href='" . base_url() . "account/register_user/$key'>Click to submit an account request.</a></p>";
+			$message = "<p>The following user requested a Boots technical catalogue account: </p>";
+			$message .= "<p><a href='" . base_url() . "account/confirm_signup/$key'>Click to submit an account request.</a></p>";
 
 			$this->email->from('boots@evdatacenter.co.uk', "Admin");
 			$this->email->to('ewan.valentine@boots.co.uk');
 			$this->email->subject('Please confirm a new Boots technical catalogue account');
 			$this->email->message($message);
-
-				if($this->user_model->add_temp_user($key)){
-					if($this->email->send()){
 				
+			if($this->user_model->add_temp_user($key)){
+				
+
+					if($this->email->send()){
+					
 					$this->load->view('thank_you');				
 				}else{
 
 					echo "Failed.";
 				}
+			
 
 			}else{
 				echo "Problem adding to database.";
 			}
 
 		}else{
-
+			print ("Something failed...");
 			$this->load->view('sign_up_view');
 		}
 		$this->load->view('footer');
