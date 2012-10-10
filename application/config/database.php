@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = 'drudkh';
-$db['default']['database'] = 'Catalogue';
+$db['default']['username'] = 'web98-admin-4';
+$db['default']['password'] = 'bootsdotcom';
+$db['default']['database'] = 'web98-admin-4';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
