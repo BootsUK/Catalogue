@@ -25,7 +25,7 @@ echo form_password('cpassword');
 echo "</p>";
 
 echo "<p>Enter your e-mail: ";
-echo form_input('email', $this->input->post('email'));
+echo form_input('email', $this->input->post('email'), 'class="email"');
 echo "</p>";
 
 echo "<p>Company name: ";
