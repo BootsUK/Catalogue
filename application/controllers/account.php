@@ -7,6 +7,7 @@ class Account extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+		$this->load->model('user_model');
 	}
 
 	public function index(){
@@ -93,7 +94,6 @@ class Account extends CI_Controller {
 
 		$this->load->view('header');
 		
-		
 		$this->form_validation->set_rules('email', 'E-Mail', 'required|trim|valid_email|is_unique[users.email]|max_length[125]');
 		$this->form_validation->set_rules('first_name', 'First name', 'required|trim|max_length[50]');
 		$this->form_validation->set_rules('last_name', 'Last name', 'required|trim|max_length[75]');
@@ -106,7 +106,7 @@ class Account extends CI_Controller {
 			
 			$key = md5(uniqid());
 
-			$this->load->model('user_model');
+			
 			$this->load->library('email', array('mailtype'=>'html'));
 
 			$message = "<p>The following user requested a Boots technical catalogue account: </p>";
@@ -188,7 +188,6 @@ class Account extends CI_Controller {
 
 		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[7]|max_length[50]');
 		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|trim|matches[password]');
-		
 
 		if($this->form_validation->run() == true){
 			

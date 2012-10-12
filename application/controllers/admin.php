@@ -4,6 +4,8 @@ class Admin extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
+	
+		$this->load->model('admin_model');
 	}
 
 	public function index(){
@@ -13,7 +15,18 @@ class Admin extends CI_Controller{
 
 	public function dashboard(){
 
-		print("Dashboard stuff goes here");
+		if($this->session->userdata('email') == 'ewan.valentine@boots.co.uk'){
+
+			$users = $this->admin_model->display_all_users();
+	
+				if($users == true){
+					$this->load->view('display_all_users_view', array('users' => $users));
+				}else{
+					print("They aint no users");
+				}
+		}else{
+			print("You aint no admin");
+		}
 	}
 
 	public function add_example(){

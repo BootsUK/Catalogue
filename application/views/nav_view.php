@@ -1,6 +1,6 @@
 <div class="header-container">
             <header class="wrapper clearfix">
-                <h1 class="title">h1.title</h1>
+                <h1 class="title">Welcome to Boots digital marketing hub</h1>
                 <nav>
                     <ul>
                         <li><a href="http://evdatacenter.co.uk/boots/account/login">Log-in</a></li>
@@ -11,5 +11,7 @@
                 </nav>
             </header>
         </div>
+
+        <p>You are logged in as: <?php echo $this->session->userdata('email'); ?></p>
 <div class="main-container">
     <div class="main wrapper clearfix">

@@ -1,6 +1,8 @@
 <?php 
 
-echo form_open('account/update_details');
+echo form_open('account/update_basic_details');
+
+echo validation_errors();
 
 echo "<p>Update first name: ";
 echo form_input('first_name', 'First name');
@@ -17,6 +19,8 @@ echo "</p>";
 echo "<p>Update company:";
 echo form_input('company', 'Company');
 echo "</p>";
+
+echo form_submit('new_details_submit', 'Submit');
 
 echo form_close();
 

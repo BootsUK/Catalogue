@@ -89,14 +89,14 @@ class User_model extends CI_Model{
 
 	}
 
-	public function update_password(){
+	public function update_password($data){
 
 		// Gets e-mail set via cookie
 		$email = $this->session->userdata('email');
 
 		// Update password field where e-mail == current session e-mail
 		$this->db->where('email', $email);
-		$update_password = $this->db->update('users', $data);
+		$update_password = $this->db->set('users', $data);
 
 		if($update_password){
 			return true;
@@ -105,14 +105,14 @@ class User_model extends CI_Model{
 		}
 	}
 
-	public function update_basic_details(){
+	public function update_basic_details($data){
 
 		// Gets e-mail set via cookie
 		$email = $this->session->userdata('email');
 
 		// Update basic details
 		$this->db->where('email', $email);
-		$update_basic_details = $this->db->update('users', $data);
+		$update_basic_details = $this->db->set('users', $data);
 
 		if($update_basic_details){
 			return true;
