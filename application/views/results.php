@@ -5,4 +5,3 @@
         echo "<p>" . $row['description'] . "</p>";
     }
 ?>
-

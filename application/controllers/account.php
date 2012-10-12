@@ -92,7 +92,7 @@ class Account extends CI_Controller {
 	public function sign_up_validation(){
 
 		$this->load->view('header');
-		$this->load->library('form_validation');
+		
 		
 		$this->form_validation->set_rules('email', 'E-Mail', 'required|trim|valid_email|is_unique[users.email]|max_length[125]');
 		$this->form_validation->set_rules('first_name', 'First name', 'required|trim|max_length[50]');
@@ -169,6 +169,63 @@ class Account extends CI_Controller {
 		}
 
 		$this->load->view('footer');
+	}
+
+	public function update(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->view('update_details_view');
+		$this->load->view('footer');
+
+	}
+
+	public function update_password(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->view('update_password_view');
+
+		$this->form_validation->set_rules('password', 'Password', 'required|trim|min_length[7]|max_length[50]');
+		$this->form_validation->set_rules('confirm_password', 'Confirm Password', 'required|trim|matches[password]');
+		
+
+		if($this->form_validation->run() == true){
+			
+			$data = array(
+				'password' => $this->input->post('password')
+				);
+		
+
+			$this->user_model->update_password($data);
+		}
+
+		$this->load->view('footer');
+
+	}
+
+	public function update_basic_details(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->view('update_basic_details_view');
+		
+		$this->form_validation->set_rules('first_name', 'First name', 'required|trim|min_length[1]|max_length[75]');
+		$this->form_validation->set_rules('last_name', 'Last name', 'required|trim|min_length[1]|max_length[125]');
+		$this->form_validation->set_rules('company', 'Company', 'trim|max_length[125]');		
+
+		if($this->form_validation->run() == true){
+			$data = array(
+				'first_name' => $this->input->post('first_name'),
+				'last_name' => $this->input->post('last_name'),
+				'company' => $this->input->post('company')
+				);
+
+			$this->user_model->update_basic_details($data);
+		}	
+
+		$this->load->view('footer');
+
 	}
 
 }

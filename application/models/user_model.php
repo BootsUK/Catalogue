@@ -89,4 +89,37 @@ class User_model extends CI_Model{
 
 	}
 
+	public function update_password(){
+
+		// Gets e-mail set via cookie
+		$email = $this->session->userdata('email');
+
+		// Update password field where e-mail == current session e-mail
+		$this->db->where('email', $email);
+		$update_password = $this->db->update('users', $data);
+
+		if($update_password){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public function update_basic_details(){
+
+		// Gets e-mail set via cookie
+		$email = $this->session->userdata('email');
+
+		// Update basic details
+		$this->db->where('email', $email);
+		$update_basic_details = $this->db->update('users', $data);
+
+		if($update_basic_details){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
 }
