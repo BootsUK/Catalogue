@@ -10,8 +10,15 @@ class Campaign_model extends CI_Model{
 
 	}
 
-	public function create(){
+	public function create($data){
 
+		$query = $this->db->insert('tasks', $data);
+
+		if($query == true){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public function read(){
@@ -23,7 +30,7 @@ class Campaign_model extends CI_Model{
 	}
 
 	public function delete(){
-		
+
 	}
 
 }

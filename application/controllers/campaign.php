@@ -10,11 +10,21 @@ class Campaign extends CI_Controller{
 	public function __construct(){
 		parent::__construct();
 
-		$this->load->model('');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->model('campaign_model');
 	}
 
 	public function index(){
 
+		$this->home();
+	}
+
+	public function home(){
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->view('campaign_home_view');
+		$this->load->view('footer');
 	}
 
 	public function tasks(){
@@ -24,6 +34,7 @@ class Campaign extends CI_Controller{
 	$this->load->view('header');
 
 	$this->load->view('nav_view');
+	$this->load->view('campaign_home_view');
 
 		if($this->session->userdata('is_logged_in') == 1){
 			$this->load->view('task_view');
@@ -36,40 +47,81 @@ class Campaign extends CI_Controller{
 
 	}
 
-	public function add_task(){
+	public function create(){
 
 		$this->load->view('header');
 		$this->load->view('nav_view');
+		$this->load->view('campaign_home_view');
+
+		$this->load->view('add_task_view');
+
+		$this->form_validation->set_rules('title', 'Title', 'required|max_length[255]');
+		$this->form_validation->set_rules('description', 'Description', 'max_length[555]');
+		$this->form_validation->set_rules('manager', 'Manager', 'max_length[125]|required');
+		$this->form_validation->set_rules('campaign', 'Campaign', 'max_length[125]');
+		$this->form_validation->set_rules('due_date', 'Due date', 'required');
+		$this->form_validation->set_rules('comments', 'Comments', 'max_length[555]');
+		$this->form_validation->set_rules('status', 'Status', 'required');
 
 		$this->load->helper('date');
 
-		$datestring = "Day: %d Month: %m Year: %Y";
+		$datestring = "%d/%m/%Y";
 		$time = time();
 
-		$data = array(
+		if($this->form_validation->run() == true){
+
+			$data = array(
 			'title' => $this->input->post('title'),
 			'description' => $this->input->post('description'),
 			'manager' => $this->input->post('manager'),
 			'campaign' => $this->input->post('campaign'),
 			'due_date' => $this->input->post('due_date'),
-			'set_date' => mdate($datestring);,
+			'set_date' => mdate($datestring),
+			'comments' => $this->input->post('comments'),
+			'status' => $this->input->post('status'),
+			'modified' => mdate($datestring, $time)
 			);
 
-		$this->model->create($data);
-
+			$this->campaign_model->create($data);
+		}
+		
 		$this->load->view('footer');
 
 	}
 
-	public function delete_task(){
+	public function read(){
 
-		/* Delete tasks */
+	$this->load->view('header');
+	$this->load->view('nav_view');
+	$this->load->view('campaign_home_view');
+
+	$this->campaign_model->read();
+
+	$this->load->view('footer');
 
 	}
 
-	public function update_task(){
+	public function update(){
 
-		/* Update tasks */
+	$this->load->view('header');
+	$this->load->view('nav_view');
+	$this->load->view('campaign_home_view');
+	
+	$this->campaign_model->update();
+
+	$this->load->view('footer');
+
+	}
+
+	public function delete(){
+
+	$this->load->view('header');
+	$this->load->view('nav_view');
+	$this->load->view('campaign_home_view');
+
+	$this->campaign_model->delete();
+
+	$this->load->view('footer');
 
 	}
 

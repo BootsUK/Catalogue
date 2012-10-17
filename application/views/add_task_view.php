@@ -1,6 +1,6 @@
 <?php 
 
-echo form_open('campaign/add_task');
+echo form_open('campaign/create');
 
 echo validation_errors();
 
@@ -10,6 +10,10 @@ echo "</p>";
 
 echo "<p>Enter a description";
 echo form_input('description', 'Description');
+echo "</p>";
+
+echo "<p>Enter campaign name:";
+echo form_input('campaign', 'Campaign');
 echo "</p>";
 
 echo "<p>Campaign manager, or manager";
