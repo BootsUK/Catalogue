@@ -93,9 +93,6 @@ class Campaign extends CI_Controller{
 			redirect('core/restricted');
 		}
 
-
-		
-		
 		$this->load->view('footer');
 
 	}
@@ -110,11 +107,17 @@ class Campaign extends CI_Controller{
 			
 		$this->load->view('campaign_home_view');
 
+		$tasks = $this->campaign_model->read();
+		
+		if($tasks == true){
+			$this->load->view('all_task_view', array('tasks' => $tasks));
+		}else{
+			print("They aint no users");
+		}
+
 	}else{
 		redirect('core/restricted');
 	}
-
-	$this->campaign_model->read();
 
 	$this->load->view('footer');
 
@@ -129,11 +132,13 @@ class Campaign extends CI_Controller{
 			
 		$this->load->view('campaign_home_view');
 
+		$data = array();
+
+		$this->campaign_model->update($data);
+
 	}else{
 		redirect('core/restricted');
 	}
-
-	$this->campaign_model->update();
 
 	$this->load->view('footer');
 
@@ -153,7 +158,9 @@ class Campaign extends CI_Controller{
 
 		if($this->form_validation->run() == true){
 
-			$data = array('id' => $this->input->post('id'));		
+			$data = array('id' => $this->input->post('id'));
+
+			$this->campaign_model->delete($data);	
 
 		}else{
 			$this->load->view('no_page_id_view');
@@ -163,8 +170,6 @@ class Campaign extends CI_Controller{
 	}else{
 		redirect('core/restricted');
 	}
-
-	$this->campaign_model->delete();
 
 	$this->load->view('footer');
 
