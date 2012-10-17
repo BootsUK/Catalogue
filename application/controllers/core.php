@@ -31,4 +31,12 @@ class Core extends CI_Controller{
 
 	}
 
+	public function restricted(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->view('restricted');
+		$this->load->view('footer');
+	}
+
 }

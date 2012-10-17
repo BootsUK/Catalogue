@@ -51,9 +51,7 @@ class Campaign extends CI_Controller{
 
 		$this->load->view('header');
 		$this->load->view('nav_view');
-		$this->load->view('campaign_home_view');
-
-		$this->load->view('add_task_view');
+		
 
 		$this->form_validation->set_rules('title', 'Title', 'required|max_length[255]');
 		$this->form_validation->set_rules('description', 'Description', 'max_length[555]');
@@ -64,6 +62,12 @@ class Campaign extends CI_Controller{
 		$this->form_validation->set_rules('status', 'Status', 'required');
 
 		$this->load->helper('date');
+
+		if($this->session->userdata('is_logged_in')){
+			
+		$this->load->view('campaign_home_view');
+
+		$this->load->view('add_task_view');
 
 		$datestring = "%d/%m/%Y";
 		$time = time();
@@ -84,6 +88,13 @@ class Campaign extends CI_Controller{
 
 			$this->campaign_model->create($data);
 		}
+
+		}else{
+			redirect('core/restricted');
+		}
+
+
+		
 		
 		$this->load->view('footer');
 
@@ -93,7 +104,15 @@ class Campaign extends CI_Controller{
 
 	$this->load->view('header');
 	$this->load->view('nav_view');
-	$this->load->view('campaign_home_view');
+	
+
+	if($this->session->userdata('is_logged_in')){
+			
+		$this->load->view('campaign_home_view');
+
+	}else{
+		redirect('core/restricted');
+	}
 
 	$this->campaign_model->read();
 
@@ -105,8 +124,15 @@ class Campaign extends CI_Controller{
 
 	$this->load->view('header');
 	$this->load->view('nav_view');
-	$this->load->view('campaign_home_view');
 	
+	if($this->session->userdata('is_logged_in')){
+			
+		$this->load->view('campaign_home_view');
+
+	}else{
+		redirect('core/restricted');
+	}
+
 	$this->campaign_model->update();
 
 	$this->load->view('footer');
@@ -117,7 +143,26 @@ class Campaign extends CI_Controller{
 
 	$this->load->view('header');
 	$this->load->view('nav_view');
-	$this->load->view('campaign_home_view');
+
+	if($this->session->userdata('is_logged_in')){
+			
+		$this->load->view('campaign_home_view');
+		$this->load->view('remove_campaign_view');
+
+		$this->form_validation->set_rules('id', 'ID', 'require');
+
+		if($this->form_validation->run() == true){
+
+			$data = array('id' => $this->input->post('id'));		
+
+		}else{
+			$this->load->view('no_page_id_view');
+		}
+
+
+	}else{
+		redirect('core/restricted');
+	}
 
 	$this->campaign_model->delete();
 

@@ -29,6 +29,8 @@ class Admin extends CI_Controller{
 		}
 	}
 
+	
+
 	public function add_example(){
 
 	}
@@ -44,6 +46,8 @@ class Admin extends CI_Controller{
 	public function view_example(){
 
 	}
+
+
 
 	public function create_user(){
 
