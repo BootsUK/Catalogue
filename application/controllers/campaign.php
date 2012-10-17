@@ -4,11 +4,13 @@ class Campaign extends CI_Controller{
 
 	/*
 	*	@Author Ewan Valentine
-	*	@Date 
+	*	@Date 17/10/2012
 	*/
 
 	public function __construct(){
 		parent::__construct();
+
+		$this->load->model('');
 	}
 
 	public function index(){
@@ -36,7 +38,26 @@ class Campaign extends CI_Controller{
 
 	public function add_task(){
 
-		/* Add tasks */
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		$this->load->helper('date');
+
+		$datestring = "Day: %d Month: %m Year: %Y";
+		$time = time();
+
+		$data = array(
+			'title' => $this->input->post('title'),
+			'description' => $this->input->post('description'),
+			'manager' => $this->input->post('manager'),
+			'campaign' => $this->input->post('campaign'),
+			'due_date' => $this->input->post('due_date'),
+			'set_date' => mdate($datestring);,
+			);
+
+		$this->model->create($data);
+
+		$this->load->view('footer');
 
 	}
 
