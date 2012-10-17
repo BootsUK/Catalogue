@@ -20,7 +20,15 @@ echo "<p>Update company:";
 echo form_input('company', 'Company');
 echo "</p>";
 
-echo form_submit('new_details_submit', 'Submit');
+$data = array(
+    'name' => 'submit',
+    'id' => 'submit',
+    'value' => 'true',
+    'type' => 'submit',
+    'content' => 'Submit'
+);
+
+echo form_button($data);
 
 echo form_close();
 

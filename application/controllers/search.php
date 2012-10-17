@@ -22,7 +22,7 @@ class Search extends CI_Controller{
 	public function search(){
 
 		$this->load->view('header');
-
+		$this->load->view('nav_view');
 		$this->form_validation->set_rules('search_term', 'required');
 
 		$data = array(
@@ -38,7 +38,7 @@ class Search extends CI_Controller{
 				
 				$this->load->view('results', array('search_results' => $results));
 			}else{
-				echo "No results found!";
+				$this->load->view('no_results_view');
 			}
 			
 		}else{
@@ -50,18 +50,21 @@ class Search extends CI_Controller{
 
 	public function catalogue(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->view('search_catalogue_view');
 		$this->load->view('footer');
 	}
 
 	public function users(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->view('search_users_view');
 		$this->load->view('footer');
 	}
 
-	public function projects(){
+	public function tasks(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->view('search_projects_view');
 		$this->load->view('footer');
 	}
@@ -69,7 +72,7 @@ class Search extends CI_Controller{
 	public function catalogue_search(){
 
 		$this->load->view('header');
-
+		$this->load->view('nav_view');
 		if($this->form_validation->run() == true){
 			$results = $this->search_model->catalogue();
 
@@ -88,7 +91,7 @@ class Search extends CI_Controller{
 	public function user_search(){
 
 		$this->load->view('header');
-
+		$this->load->view('nav_view');
 		$this->load->view('search_users_view');
 
 		if($this->form_validation->run() == true){
@@ -109,7 +112,7 @@ class Search extends CI_Controller{
 	public function project_search(){
 
 		$this->load->view('header');
-
+		$this->load->view('nav_view');
 		if($this->form_validation->run() == true){
 			$results = $this->search_model->projects();
 

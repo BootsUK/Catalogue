@@ -131,7 +131,7 @@ class Campaign extends CI_Controller{
 	if($this->session->userdata('is_logged_in')){
 			
 		$this->load->view('campaign_home_view');
-
+		$this->load->view('update_task_view');
 		$data = array();
 
 		$this->campaign_model->update($data);

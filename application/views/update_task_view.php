@@ -1,16 +1,10 @@
+<h2>Update a task</h2>
+
 <?php 
 
-echo form_open('account/update_password');
+echo form_open('campaign/update');
 
 echo validation_errors();
-
-echo "<p>Enter your new password:";
-echo form_password('password');
-echo "</p>";
-
-echo "<p>Re-enter your new password";
-echo form_password('confirm_password');
-echo "</p>";
 
 $data = array(
     'name' => 'submit',

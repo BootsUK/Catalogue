@@ -16,13 +16,14 @@ class Account extends CI_Controller {
 
 	public function login(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->view('login_view');
 		$this->load->view('footer');
 	}
 
 	public function check_credentials(){
 		$this->load->view('header');
-
+		$this->load->view('nav_view');
 		
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|xss_clean|callback_validate_credentials');
 		$this->form_validation->set_rules('password', 'Password', 'required|md5|trim');
@@ -46,6 +47,7 @@ class Account extends CI_Controller {
 
 	public function validate_credentials(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->model('user_model');
 
 		if($this->user_model->can_log_in()){
@@ -60,6 +62,7 @@ class Account extends CI_Controller {
 
 	public function members(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		if($this->session->userdata('is_logged_in')){
 			
 			$this->load->view('members');
@@ -72,12 +75,14 @@ class Account extends CI_Controller {
 
 	public function restricted(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->view('restricted');
 		$this->load->view('footer');
 	}
 
 	public function logout(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->session->sess_destroy();
 		$this->load->view('logout_view');
 		redirect('account/login');
@@ -85,7 +90,7 @@ class Account extends CI_Controller {
 	}
 
 	public function signup(){
-		$this->load->view('header');
+		$this->load->view('header');$this->load->view('nav_view');
 		$this->load->view('sign_up_view');
 		$this->load->view('footer');
 	}
@@ -93,7 +98,7 @@ class Account extends CI_Controller {
 	public function sign_up_validation(){
 
 		$this->load->view('header');
-		
+		$this->load->view('nav_view');
 		$this->form_validation->set_rules('email', 'E-Mail', 'required|trim|valid_email|is_unique[users.email]|max_length[125]');
 		$this->form_validation->set_rules('first_name', 'First name', 'required|trim|max_length[50]');
 		$this->form_validation->set_rules('last_name', 'Last name', 'required|trim|max_length[75]');

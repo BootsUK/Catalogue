@@ -32,9 +32,15 @@ echo "<p>Company name: ";
 echo form_input('company', $this->input->post('company'));
 echo "</p>";
 
-echo "<p>Company name: ";
-echo form_submit('sign_up_submit', 'Sign-up');
-echo "</p>";
+$data = array(
+    'name' => 'submit',
+    'id' => 'submit',
+    'value' => 'true',
+    'type' => 'submit',
+    'content' => 'Submit'
+);
+
+echo form_button($data);
 
 echo form_close();
 
