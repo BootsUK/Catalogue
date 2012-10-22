@@ -6,14 +6,12 @@ echo form_open('search/user_search');
 
 echo validation_errors();
 
-$type = array(
+$field = array(
 	'email' => 'E-Mail',
 	'first_name' => 'First name',
 	'last_name' => 'Last name',
 	'company' => 'Company'
 	);
-
-echo form_dropdown('type', $type, 'templates');
 
 echo form_dropdown('field', $field, 'title');
 

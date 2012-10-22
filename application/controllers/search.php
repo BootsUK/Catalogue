@@ -94,11 +94,19 @@ class Search extends CI_Controller{
 		$this->load->view('nav_view');
 		$this->load->view('search_users_view');
 
+		$this->form_validation->set_rules('search_term', 'Search term', 'required');
+
 		if($this->form_validation->run() == true){
-			$results = $this->search_model->catalogue();
+		
+			
+			$data = array('field' => $this->input->post('field'), 'search_term' => $this->input->post('search_term'));
+			
+			$this->search_model->user_search($data);
+
+			$users = $this->search_model->users();
 
 			if($results == true){
-				$this->load->view('users_search_results_view');
+				$this->load->view('users_search_results_view', array('users' => $users));
 			}else{
 				$this->load->view('no_results_view');
 			}

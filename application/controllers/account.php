@@ -22,8 +22,7 @@ class Account extends CI_Controller {
 	}
 
 	public function check_credentials(){
-		$this->load->view('header');
-		$this->load->view('nav_view');
+
 		
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|xss_clean|callback_validate_credentials');
 		$this->form_validation->set_rules('password', 'Password', 'required|md5|trim');
@@ -42,7 +41,7 @@ class Account extends CI_Controller {
 
 			$this->load->view('login_view');
 		}
-		$this->load->view('footer');
+
 	}
 
 	public function validate_credentials(){
@@ -90,7 +89,8 @@ class Account extends CI_Controller {
 	}
 
 	public function signup(){
-		$this->load->view('header');$this->load->view('nav_view');
+		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->view('sign_up_view');
 		$this->load->view('footer');
 	}

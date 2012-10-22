@@ -70,22 +70,22 @@ body {
 }
 
 /* ===================
-    ALL: Orange Theme
+    ALL: Blue Theme
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
+    border-bottom: 20px solid #1c66af;
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
+    border-top: 20px solid #1c66af;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: #6da4db;
 }
 
 .title {
@@ -98,7 +98,7 @@ body {
 
 nav ul {
     margin: 0;
-    padding: 0;
+    padding: 10px;
 }
 
 nav a {
@@ -161,16 +161,16 @@ nav a:hover {
 
 
 body{
-    font-family: Arial;
+
 }
 
+aside a{
+    color: #fff;
+}
 
+aside{
 
-
-
-
-
-
+}
 
 
 /* ==========================================================================
@@ -234,8 +234,8 @@ body{
     }
 
     nav {
-        float: right;
-        width: 38%;
+        float: left;
+        width: 80%;
     }
 
 /* ============

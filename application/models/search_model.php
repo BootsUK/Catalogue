@@ -22,4 +22,14 @@ class Search_model extends CI_Model{
 		}
 	}
 
+	public function user_search($data){
+		$query = $this->db->query("SELECT * FROM users WHERE " . $data['field'] . " LIKE '%" . $data['search_term'] . "%'");
+
+		if($query->num_rows){
+			return $query->result_array();
+		}else{
+			return false;
+		}		
+	}
+
 }
