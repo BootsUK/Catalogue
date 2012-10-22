@@ -1,40 +1,40 @@
-<div class="input_form">
-
 <h3>Sign up!</h3>
 
+<div class="form">
+	<ul>
 <?php 
 
 echo form_open('account/sign_up_validation');
 
 echo validation_errors();
 
-echo "<p>Enter your first name: ";
-echo form_input('first_name', $this->input->post('first_name'));
-echo "</p>";
+echo "<li><label for='first_name'>Enter your first name</label>";
+echo form_input('first_name', $this->input->post('first_name'), 'required');
+echo "</li>";
 
-echo "<p>Enter your last name: ";
+echo "<li><label for='last_name'>Enter your last name</label>";
 echo form_input('last_name', $this->input->post('last_name'));
-echo "</p>";
+echo "</li>";
 
-echo "<p>Enter a password: ";
+echo "<li><label for='password'>Enter a password</label>";
 echo form_password('password');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Re-enter your password: ";
+echo "<li><label for='cpassword'>Re-enter your password</label>";
 echo form_password('cpassword');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Enter your e-mail: ";
+echo "<li><label for='email'>Enter your e-mail</label>";
 echo form_input('email', $this->input->post('email'), 'class="email"');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Company name: ";
+echo "<li><label for=''>Company name</label>";
 echo form_input('company', $this->input->post('company'));
-echo "</p>";
+echo "</li>";
 
 $data = array(
     'name' => 'submit',
-    'id' => 'submit',
+    'class' => 'submit',
     'value' => 'true',
     'type' => 'submit',
     'content' => 'Submit'
@@ -45,7 +45,7 @@ echo form_button($data);
 echo form_close();
 
 ?>
-
+</ul>
 </div>
 
 <br style="clear:both;" />
