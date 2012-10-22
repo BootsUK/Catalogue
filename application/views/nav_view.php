@@ -7,11 +7,10 @@
 
         <?php $email = $this->session->userdata('email'); ?>
 
-        
 <div class="main-container">
     <div class="main wrapper clearfix">
-        <p><b>You are logged in as: <?php if($email != ""){echo $email;}else{echo "You are not currently logged in";} ?></b></p>
-        <aside>
+    
+    <aside>
                         <ul>
                             <li><a href="http://evdatacenter.co.uk/boots/">Home</a></li>
                             <li><a href="http://evdatacenter.co.uk/boots/account/">Account</a>
@@ -39,3 +38,6 @@
                             </li>
                         </ul>
         </aside>
+
+<p><b>You are logged in as: <?php if($email != ""){echo $email;}else{echo "You are not currently logged in";} ?></b></p>
+        
