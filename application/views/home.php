@@ -19,7 +19,7 @@
 	
 	<p><b>Once you're in</b> you can use all the features of the site by <a href="http://evdatacenter.co.uk/boots/account/login">loggin in</a>. This grants you access to certain private areas of the site, though some others are reserved for the admins for technical reasons.</p>
 	
-	<p>If you have any suggestions, please <a href="ewan.valentine@boots.co.uk">e-mail the admin</a></p>
+	<p>If you have any suggestions, please <a href="mailto:ewan.valentine@boots.co.uk">e-mail the admin</a></p>
 	
 	<br>
 	
