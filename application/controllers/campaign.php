@@ -112,7 +112,7 @@ class Campaign extends CI_Controller{
 		if($tasks == true){
 			$this->load->view('all_task_view', array('tasks' => $tasks));
 		}else{
-			print("They aint no users");
+			$this->load->view('blank_view');
 		}
 
 	}else{

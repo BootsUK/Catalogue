@@ -12,8 +12,6 @@ class Search_model extends CI_Model{
 		$query = $this->db->query("SELECT * FROM " . $data['type'] . " WHERE " . $data['field'] . " LIKE '%" . $data['search_term'] . "%'");
 	
 		if($query->num_rows) {
-			print("it worked");
-
     		return $query->result_array();
     		
     	}else{

@@ -64,7 +64,7 @@ class Account extends CI_Controller {
 		$this->load->view('nav_view');
 		if($this->session->userdata('is_logged_in')){
 			
-			$this->load->view('members');
+			redirect('http://evdatacenter.co.uk/boots/campaign/read');
 
 		}else{
 			redirect('core/restricted');

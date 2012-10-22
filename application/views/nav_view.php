@@ -13,6 +13,7 @@
         <p><b>You are logged in as: <?php if($email != ""){echo $email;}else{echo "You are not currently logged in";} ?></b></p>
         <aside>
                         <ul>
+                            <li><a href="http://evdatacenter.co.uk/boots/">Home</a></li>
                             <li><a href="http://evdatacenter.co.uk/boots/account/">Account</a>
                                 <ul>
                                    <li><a href="http://evdatacenter.co.uk/boots/account/login">Log-in</a></li>
