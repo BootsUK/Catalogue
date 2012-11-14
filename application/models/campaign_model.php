@@ -29,12 +29,12 @@ class Campaign_model extends CI_Model{
 			return $query->result_array();
 		}else{
 			return false;
-			echo "Fail";
 		}
 
 	}
 
 	public function update(){
+
 
 	}
 

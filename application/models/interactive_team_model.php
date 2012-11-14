@@ -6,7 +6,7 @@ class Interactive_team_model extends CI_Model{
 		parent::__construct();
 	}
 
-	public function add_tasks(){
+	public function add_tasks($data){
 
 		// Add task logic
 
@@ -20,27 +20,43 @@ class Interactive_team_model extends CI_Model{
 
 	}
 
-	public function delete_tasks(){
+	public function delete_tasks($data){
 
 		// Delete tasks logic
 
+		$query = $this->db->delete('it_tasks', $data);
 
+		if($query == true){
+			return true;
+		}else{
+			return false;
+		}
 
 	}
 
-	public function update_tasks(){
+	public function update_tasks($id, $data){
 
 		// Update tasks logic
 
+		$this->db->where('t_id', $id);
+		$query = $this->db->update('it_tasks', $data);
 
-
+		if($query == true){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public function view_tasks(){
 
-		$query = $this->db->query("SELECT * FROM interactive_team");
+		$query = $this->db->query("SELECT * FROM it_tasks ORDER BY t_id");
 
-		
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
 
 	}
 
