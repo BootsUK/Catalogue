@@ -26,6 +26,7 @@ class Interactive_team extends CI_Controller{
 		$this->form_validation->set_rules('t_due', 'Due date', '');
 		$this->form_validation->set_rules('t_complete', 'Completion date', '');
 		$this->form_validation->set_rules('t_status', 'Status', 'required');
+		$this->form_validation->set_rules('t_dev', 'Developer', '');
 		/* Date modified and date added done server side */
 		$this->form_validation->set_rules('t_comments', 'Comments', 'max_length[555]');
 		/* Set by handled by session data */
@@ -53,6 +54,7 @@ class Interactive_team extends CI_Controller{
 					't_due' => $this->input->post('t_due'),
 					't_comp' => $this->input->post('t_comp'),
 					't_status' => $this->input->post('t_status'),
+					't_dev' => $this->input->post('t_dev'),
 					't_date_added' => mdate($datestring, $time),
 					't_date_mod' => mdate($datestring, $time),
 					't_comments' => $this->input->post('t_comments'),
@@ -71,8 +73,8 @@ class Interactive_team extends CI_Controller{
 	}
 
 	public function delete_tasks(){
-
-
+		
+		
 
 	}
 
@@ -84,6 +86,7 @@ class Interactive_team extends CI_Controller{
 		$this->form_validation->set_rules('t_due', 'Due date', '');
 		$this->form_validation->set_rules('t_complete', 'Completion date', '');
 		$this->form_validation->set_rules('t_status', 'Status', 'required');
+		$this->form_validation->set_rules('t_dev', 'Developer', '');
 		/* Date modified and date added done server side */
 		$this->form_validation->set_rules('t_comments', 'Comments', 'max_length[555]');
 		/* Set by handled by session data */
