@@ -20,11 +20,12 @@ class Interactive_team_model extends CI_Model{
 
 	}
 
-	public function delete_tasks($data){
+	public function delete_tasks($id){
 
 		// Delete tasks logic
 
-		$query = $this->db->delete('it_tasks', $data);
+		$this->db->where('t_id', $id);
+		$query = $this->db->delete('it_tasks');
 
 		if($query == true){
 			return true;

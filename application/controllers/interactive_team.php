@@ -6,6 +6,7 @@ class Interactive_team extends CI_Controller{
 		parent::__construct();
 
 		$this->load->helper('form');
+		$this->load->helper('url');
 		$this->load->library('form_validation');
 		$this->load->model('interactive_team_model');
 	}
@@ -16,6 +17,12 @@ class Interactive_team extends CI_Controller{
 
 	public function display_tasks(){
 
+		$this->load->library('table');
+        
+		$this->data['results'] = $this->interactive_team_model->view_tasks();
+       
+	    $this->load->view('interactive_team_view_tasks', $this->data); 
+      
 	}
 
 	public function add_tasks(){
@@ -74,7 +81,9 @@ class Interactive_team extends CI_Controller{
 
 	public function delete_tasks(){
 		
-		
+		$id = $this->uri->segment(3);
+
+		$this->interactive_team_model->delete_tasks($id);
 
 	}
 
@@ -107,7 +116,7 @@ class Interactive_team extends CI_Controller{
 
 				$email = $this->session->userdata('email');
 
-				$id = $this->input->post('t_id');
+				$id = $this->uri->segment(3);
 
 				$data = array(
 					't_title' => $this->input->post('t_title'),
