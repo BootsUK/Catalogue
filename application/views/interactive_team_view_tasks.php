@@ -1,20 +1,20 @@
-
-
 <h3>View tasks</h3>
 
+<section class='lister'>
 <?php 
 
 foreach($results as $row){
-	echo "<section class='lister'>";
+	echo "<article>";
 	echo "<p><a href=''><b>Title: </b> " . $row['t_title'] . "</a></p>";
 	echo "<p><b>Description: </b> " . $row['t_desc'] . "</p>";
 	echo "<p><b>Status: </b> " . $row['t_status'] . "</p>";
 	echo "<p><b>Last modified: </b> " . $row['t_date_mod'] . "</p>";
 	echo "<p><a href='#' onClick='confirm_action(\"update_tasks\"," . $row['t_id'] . ");'>Edit</a> || <a href='#' onClick='confirm_action(\"delete_tasks\",". $row['t_id'] .");'>Delete</a>";
-	echo "</section><br />";
+	echo "</article><br />";
 }
 
 ?>
+</section>
 
 <script type="text/javascript">
 

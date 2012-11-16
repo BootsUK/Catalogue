@@ -62,11 +62,12 @@ class Search extends CI_Controller{
 		$this->load->view('footer');
 	}
 
-	public function tasks(){
-		$this->load->view('header');
-		$this->load->view('nav_view');
-		$this->load->view('search_projects_view');
-		$this->load->view('footer');
+	public function it_tasks(){
+
+	}
+
+	public function campaign_tasks(){
+
 	}
 
 	public function catalogue_search(){
@@ -117,22 +118,11 @@ class Search extends CI_Controller{
 		$this->load->view('footer');
 	}
 
-	public function project_search(){
+	public function it_task_search(){
 
-		$this->load->view('header');
-		$this->load->view('nav_view');
-		if($this->form_validation->run() == true){
-			$results = $this->search_model->projects();
+	}
 
-			if($results == true){
-				$this->load->view('projects_search_results_view');
-			}else{
-				$this->load->view('no_results_view');
-			}
-		}else{
-			$this->load->view('blank_search_view');
-		}
+	public function campaign_task_search(){
 
-		$this->load->view('footer');
 	}
 }

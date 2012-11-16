@@ -17,12 +17,17 @@ class Interactive_team extends CI_Controller{
 
 	public function display_tasks(){
 
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
 		$this->load->library('table');
         
 		$this->data['results'] = $this->interactive_team_model->view_tasks();
        
 	    $this->load->view('interactive_team_view_tasks', $this->data); 
       
+      	$this->load->view('footer');
+
 	}
 
 	public function add_tasks(){
@@ -81,9 +86,15 @@ class Interactive_team extends CI_Controller{
 
 	public function delete_tasks(){
 		
-		$id = $this->uri->segment(3);
 
-		$this->interactive_team_model->delete_tasks($id);
+		$id = $this->uri->segment(3);
+		$del = $this->interactive_team_model->delete_tasks($id);
+
+		if($del == true){
+			redirect('interactive_team/display_tasks');
+		}else{
+			print "Deletion failed";
+		}
 
 	}
 
@@ -144,6 +155,7 @@ class Interactive_team extends CI_Controller{
 
 	public function home(){
 		$this->load->view('header');
+		$this->load->view('nav_view');
 		$this->load->view('interactive_team_home_view');
 		$this->load->view('footer');
 	}
