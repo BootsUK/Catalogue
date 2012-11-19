@@ -19,18 +19,25 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->view('header');
 		$this->load->view('nav_view');
-
-		$this->load->library('table');
-        
-		$this->data['results'] = $this->interactive_team_model->view_tasks();
        
-	    $this->load->view('interactive_team_view_tasks', $this->data); 
-      
-      	$this->load->view('footer');
+		if($this->session->userdata('is_logged_in') == 1){
+			     
+			$this->data['results'] = $this->interactive_team_model->view_tasks();
 
+			$this->load->view('interactive_team_view_tasks', $this->data); 
+
+		}else{
+			redirect('core/restricted');
+		} /* End of log-in checked functionality */
+     
+      	$this->load->view('footer');
 	}
 
 	public function add_tasks(){
+
+		$this->load->view('header');
+
+		$this->load->view('nav_view');
 
 		$this->form_validation->set_rules('t_title', 'Title', 'required|max_length[255]');
 		$this->form_validation->set_rules('t_desc', 'Description', 'required');
@@ -46,7 +53,7 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->helper('date');
 
-		if($this->session->userdata('is_logged_in')){
+		if($this->session->userdata('is_logged_in') == 1){
 			
 			$this->load->view('interactive_team_add_tasks');
 
@@ -54,8 +61,6 @@ class Interactive_team extends CI_Controller{
 			$time = time();
 
 			if($this->form_validation->run() == true){
-
-				/* New data array, delete one above */
 
 				$email = $this->session->userdata('email');
 
@@ -74,18 +79,19 @@ class Interactive_team extends CI_Controller{
 					't_week_com' => $this->input->post('t_week_com')
 				);
 
-
 				$this->interactive_team_model->add_tasks($data);
-		}
+
+			}
 
 		}else{
 			redirect('core/restricted');
 		}
 
+		$this->load->view('footer');
+
 	}
 
 	public function delete_tasks(){
-		
 
 		$id = $this->uri->segment(3);
 		$del = $this->interactive_team_model->delete_tasks($id);
@@ -99,6 +105,8 @@ class Interactive_team extends CI_Controller{
 	}
 
 	public function update_tasks(){
+
+		$this->load->view('header');
 
 		$this->form_validation->set_rules('t_title', 'Title', 'required|max_length[255]');
 		$this->form_validation->set_rules('t_desc', 'Description', 'required');
@@ -114,7 +122,7 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->helper('date');
 
-		if($this->session->userdata('is_logged_in')){
+		if($this->session->userdata('is_logged_in') == 1){
 			
 			$this->load->view('interactive_team_update_tasks');
 
@@ -122,8 +130,6 @@ class Interactive_team extends CI_Controller{
 			$time = time();
 
 			if($this->form_validation->run() == true){
-
-				/* New data array, delete one above */
 
 				$email = $this->session->userdata('email');
 
@@ -141,22 +147,46 @@ class Interactive_team extends CI_Controller{
 					't_comments' => $this->input->post('t_comments'),
 					't_set_by' => $email,
 					't_week_com' => $this->input->post('t_week_com')
-				);
-
+				); /* end of data array to be sent to the update_tasks model */
 
 				$this->interactive_team_model->update_tasks($id, $data);
-		}
+	
+			}else{
+				echo("<div class='error'>Update failed. <span><a href='mailto:ewan.valentine@boots.co.uk?Subject=Bug%20detected:%20/boots/interactive_team/update_tasks/'>e-mail bug?</a></span></div>");
+			} /* end of form validation if statement */
 
 		}else{
 			redirect('core/restricted');
-		}
+		} /* end of user restricted functionality */
+
+		$this->load->view('footer');
 
 	}
 
 	public function home(){
 		$this->load->view('header');
 		$this->load->view('nav_view');
-		$this->load->view('interactive_team_home_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$this->load->view('interactive_team_home_view');
+
+		}else{
+			redirect('http://evdatacenter.co.uk/boots/core/restricted');
+		} /* end of user restricted functionality */
+
+		$this->load->view('footer');
+	}
+
+	public function search_tasks(){
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in') == 1){
+			$this->load->view('interactive_team_search_tasks');
+		}else{
+			redirect('core/restricted');
+		}
 		$this->load->view('footer');
 	}
 

@@ -15,7 +15,7 @@
                             <li><a href="http://evdatacenter.co.uk/boots/">Home</a></li>
                             <li><a href="http://evdatacenter.co.uk/boots/account/">Account</a>
                                 <ul>
-                                   <li><a href="http://evdatacenter.co.uk/boots/account/login">Log-in</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/account/login">Log-in</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/account/signup">Request sign-up</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/admin/dashboard">Admin dashboard</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/account/logout">Log-out</a></li>
@@ -25,8 +25,6 @@
                                 <ul>
                                     <li><a href="http://evdatacenter.co.uk/boots/campaign/read">View tasks</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/campaign/create">Add tasks</a></li>
-                                    <li><a href="http://evdatacenter.co.uk/boots/campaign/delete">Delete tasks</a></li>
-                                    <li><a href="http://evdatacenter.co.uk/boots/campaign/update">Update tasks</a></li>
                                 </ul>
                             </li>
                             <li><a href="">Catalogue</a>
@@ -34,6 +32,20 @@
                                     <li><a href="http://evdatacenter.co.uk/boots/search/catalogue">Search catalogue</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/search/users">Search users</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/search/tasks">Search tasks</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="http://evdatacenter.co.uk/boots/interactive_team/">Interactive team</a>
+                                <ul>
+                                    <li><a href="http://evdatacenter.co.uk/boots/interactive_team/display_tasks">View tasks</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/interactive_team/add_tasks">Add tasks</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/interactive_team/search_tasks">Search tasks</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="http://evdatacenter.co.uk/boots/developers_center">Developers center</a>
+                                <ul>
+                                    <li><a href="http://evdatacenter.co.uk/boots/developers_center/updates">Updates</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/developers_center/developers_roles">Who does what?</a></li>
+                                    <li><a href="http://evdataventer.co.uk/boots/developers_center/site_structure">Site structure</a></li>
                                 </ul>
                             </li>
                         </ul>
