@@ -5,6 +5,16 @@
         <div class="footer-container">
             <footer class="wrapper">
                 <h3>footer</h3>
+
+                <p>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Developers Center</li>
+                        <li>Campaign Center</li>
+                        <li>Account</li>
+                    </ul>
+                </p>
             </footer>
         </div>
 
