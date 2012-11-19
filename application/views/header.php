@@ -12,6 +12,8 @@
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/normalize.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="js/main.js"></script>
 
         <script src="<?php echo base_url(); ?>js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>

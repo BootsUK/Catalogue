@@ -3,14 +3,16 @@
 <h3>Updates:</h3>
 
 <section>
-<div id="feed"></div>
+<div id="FeedEk">
+
+</div>
 </section>
 
 
 <script type="text/javascript">
- $('#feed').FeedEk({
-   FeedUrl : 'https://github.com/bootsDevelopers/Catalogue/commits/master.atom',
-   MaxCount : 500,
+ $('#FeedEk').FeedEk({
+   FeedUrl : 'https://github.com/bootsDevelopers/Catalogue/commits/master',
+   MaxCount : 50,
    ShowDesc : true,
    ShowPubDate:true
   });
