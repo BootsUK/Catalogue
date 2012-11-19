@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/normalize.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css">
 
-        <script src="http://evdatacenter.co.uk/boots/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+        <script src="<?php echo base_url(); ?>js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
     <body style="background-image:url('<?php echo base_url(); ?>/img/grid.png');">
         <!--[if lt IE 7]>

@@ -62,14 +62,6 @@ class Search extends CI_Controller{
 		$this->load->view('footer');
 	}
 
-	public function it_tasks(){
-
-	}
-
-	public function campaign_tasks(){
-
-	}
-
 	public function catalogue_search(){
 
 		$this->load->view('header');
@@ -118,11 +110,23 @@ class Search extends CI_Controller{
 		$this->load->view('footer');
 	}
 
-	public function it_task_search(){
+	public function interactive_team_tasks(){
+		$this->load->view('header');
+		$this->load->view('nav_view');
 
+		if($this->session->userdata('is_logged_in') == 1){
+			$this->load->view('interactive_team_search_tasks');
+		}else{
+			redirect('core/restricted');
+		}
+		$this->load->view('footer');
 	}
 
-	public function campaign_task_search(){
+	public function campaign(){
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->view('campaign_search_view');
+		$this->load->view('footer');
 
 	}
 }

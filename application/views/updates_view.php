@@ -1,10 +1,6 @@
-<h3>Developers log // information center</h3>
-
-<p>Select an area</p>
-
-<br>
-
 <script type="text/javascript" src="<?php echo base_url(); ?>js/FeedEk.js"></script>
+
+<h3>Updates:</h3>
 
 <section>
 <div id="feed"></div>
