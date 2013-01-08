@@ -2,7 +2,7 @@
 
 <?php 
 
-print_r($results['t_title']);
+print_r($data->results['t_id']);
 
 echo form_open('interactive_team/update_tasks');
 
