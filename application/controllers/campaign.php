@@ -16,7 +16,6 @@ class Campaign extends CI_Controller{
 	}
 
 	public function index(){
-
 		$this->home();
 	}
 
@@ -28,9 +27,7 @@ class Campaign extends CI_Controller{
 	}
 
 	public function tasks(){
-
 		/* Read tasks */
-
 	$this->load->view('header');
 
 	$this->load->view('nav_view');
