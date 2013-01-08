@@ -19,19 +19,6 @@
                                     <li><a href="http://evdatacenter.co.uk/boots/account/signup">Request sign-up</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/admin/dashboard">Admin dashboard</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/account/logout">Log-out</a></li>
-                                    <li><a href="http://evdatacenter.co.uk/boots/search/users">Search users</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="http://evdatacenter.co.uk/boots/campaign/">Campaign</a>
-                                <ul>
-                                    <li><a href="http://evdatacenter.co.uk/boots/campaign/read">View tasks</a></li>
-                                    <li><a href="http://evdatacenter.co.uk/boots/campaign/create">Add tasks</a></li>
-                                    <li><a href="http://evdatacenter.co.uk/boots/search/campaign"></a></li>
-                                </ul>
-                            </li>
-                            <li><a href="">Catalogue</a>
-                                <ul>
-                                    <li><a href="http://evdatacenter.co.uk/boots/search/catalogue">Search catalogue</a></li>
                                 </ul>
                             </li>
                             <li><a href="http://evdatacenter.co.uk/boots/interactive_team/">Interactive team</a>

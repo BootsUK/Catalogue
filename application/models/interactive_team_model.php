@@ -51,6 +51,8 @@ class Interactive_team_model extends CI_Model{
 
 	public function view_tasks(){
 
+		// View all tasks
+
 		$query = $this->db->query("SELECT * FROM it_tasks ORDER BY t_id");
 
 		if($query->num_rows() > 0){

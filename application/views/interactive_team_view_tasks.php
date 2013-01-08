@@ -3,14 +3,18 @@
 <section class='lister'>
 <?php 
 
-foreach($results as $row){
-	echo "<article>";
-	echo "<p><a href=''><b>Title: </b> " . $row['t_title'] . "</a></p>";
-	echo "<p><b>Description: </b> " . $row['t_desc'] . "</p>";
-	echo "<p><b>Status: </b> " . $row['t_status'] . "</p>";
-	echo "<p><b>Last modified: </b> " . $row['t_date_mod'] . "</p>";
-	echo "<p><a href='#' onClick='confirm_action(\"update_tasks\"," . $row['t_id'] . ");'>Edit</a> || <a href='#' onClick='confirm_action(\"delete_tasks\",". $row['t_id'] .");'>Delete</a>";
-	echo "</article><br />";
+foreach($result as $row){
+	echo "<section>";
+	echo "<table class='sortable'>";
+	echo "<tr><th>Title</th> <th>Description</th> <th>Status</th> <th>Last modified</th> <th>Edit//Delete</th></tr>";
+	echo "<tr>";
+	echo "<td>" . $row['t_title'] . "</td>";
+	echo "<td>" . $row['t_desc'] . "</td>";
+	echo "<td>" . $row['t_date_mod'] . "</td>";
+	echo "<td><a href='#' onClick='confirm_action(\"update_tasks\"," . $row['t_id'] . ");'>Edit</a> || <a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'>Delete</a></td>";
+	echo "</tr>";
+	echo "</table>";
+	echo "</section>";
 }
 
 ?>

@@ -4,7 +4,6 @@ class Interactive_team extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
-
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->library('form_validation');
@@ -20,23 +19,22 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('header');
 		$this->load->view('nav_view');
        
-		if($this->session->userdata('is_logged_in') == 1){
+		if($this->session->userdata('is_logged_in')){
 			     
 			$this->data['results'] = $this->interactive_team_model->view_tasks();
 
-			$this->load->view('interactive_team_view_tasks', $this->data); 
+			$this->load->view('interactive_team_view_tasks', $this->data);
 
 		}else{
 			redirect('core/restricted');
 		} /* End of log-in checked functionality */
      
-      	$this->load->view('footer');
+	$this->load->view('footer');
 	}
 
 	public function add_tasks(){
 
 		$this->load->view('header');
-
 		$this->load->view('nav_view');
 
 		$this->form_validation->set_rules('t_title', 'Title', 'required|max_length[255]');
@@ -78,17 +76,12 @@ class Interactive_team extends CI_Controller{
 					't_set_by' => $email,
 					't_week_com' => $this->input->post('t_week_com')
 				);
-
 				$this->interactive_team_model->add_tasks($data);
-
 			}
-
 		}else{
 			redirect('core/restricted');
 		}
-
 		$this->load->view('footer');
-
 	}
 
 	public function delete_tasks(){
@@ -101,7 +94,6 @@ class Interactive_team extends CI_Controller{
 		}else{
 			print "Deletion failed";
 		}
-
 	}
 
 	public function update_tasks(){

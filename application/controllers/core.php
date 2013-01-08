@@ -10,7 +10,6 @@ class Core extends CI_Controller{
 
 		$this->load->library('parser');
 		$this->load->helper('url'); 
-		
 		$this->home();
 
 	}
@@ -18,15 +17,9 @@ class Core extends CI_Controller{
 	public function home(){
 
 		$this->load->view('header');
-
 		$this->load->helper('form');
-
 		$this->load->view('nav_view');
-		
-		$this->load->view('search_view');
-
 		$this->load->view('home');
-
 		$this->load->view('footer');
 
 	}
