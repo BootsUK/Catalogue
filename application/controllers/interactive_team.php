@@ -51,7 +51,7 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->helper('date');
 
-		if($this->session->userdata('is_logged_in') == 1){
+		if($this->session->userdata('is_logged_in')){
 			
 			$this->load->view('interactive_team_add_tasks');
 

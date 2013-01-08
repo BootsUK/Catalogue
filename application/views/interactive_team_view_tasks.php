@@ -3,7 +3,7 @@
 <section class='lister'>
 <?php 
 
-foreach($result as $row){
+foreach($results as $row){
 	echo "<section>";
 	echo "<table class='sortable'>";
 	echo "<tr><th>Title</th> <th>Description</th> <th>Status</th> <th>Last modified</th> <th>Edit//Delete</th></tr>";
