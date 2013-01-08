@@ -1,17 +1,9 @@
 <div class="header-container">
             <header class="wrapper clearfix">
                 <h1 class="title">Welcome to Boots digital marketing hub</h1>
-                
             </header>
-        </div>
 
-        <?php $email = $this->session->userdata('email'); ?>
-
-<div class="main-container">
-    <div class="main wrapper clearfix">
-    
-    <aside>
-                        <ul>
+<ul class="menu">
                             <li><a href="http://evdatacenter.co.uk/boots/">Home</a></li>
                             <li><a href="http://evdatacenter.co.uk/boots/account/">Account</a>
                                 <ul>
@@ -34,9 +26,14 @@
                                     <li><a href="http://evdatacenter.co.uk/boots/developers_center/developers_roles">Who does what?</a></li>
                                     <li><a href="http://evdataventer.co.uk/boots/developers_center/site_structure">Site structure</a></li>
                                 </ul>
-                            </li>
-                        </ul>
-        </aside>
+                        </li>
+                </ul>
+
+</div>
+
+        <?php $email = $this->session->userdata('email'); ?>
+
+<div class="main-container">
 
 <p><b>You are logged in as: <?php if($email != ""){echo $email;}else{echo "You are not currently logged in";} ?></b></p>
         
