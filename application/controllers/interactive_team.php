@@ -18,18 +18,16 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->view('header');
 		$this->load->view('nav_view');
-       
+    	
 		if($this->session->userdata('is_logged_in')){
-			     
 			$this->data['results'] = $this->interactive_team_model->view_tasks();
-
 			$this->load->view('interactive_team_view_tasks', $this->data);
-
 		}else{
 			redirect('core/restricted');
 		} /* End of log-in checked functionality */
-     
+    
 	$this->load->view('footer');
+	
 	}
 
 	public function add_tasks(){
@@ -57,7 +55,7 @@ class Interactive_team extends CI_Controller{
 			$datestring = "%d/%m/%Y";
 			$time = time();
 
-			if($this->form_validation->run() == true){
+			if($this->form_validation->run()){
 
 				$email = $this->session->userdata('email');
 
@@ -95,27 +93,47 @@ class Interactive_team extends CI_Controller{
 		}
 	}
 
+	public function update_prepare(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$id = $this->uri->segment(3);
+
+			$this->data['results'] = $this->interactive_team_model->get_by_id($id);
+
+			$this->load->view('interactive_team_update_tasks', $this->data);
+
+		}else{
+			redirect('core/restricted');
+		}
+		
+		$this->load->view('footer');
+
+	}
+
 	public function update_tasks(){
 
 		$this->load->view('header');
+
+		$this->load->view('nav_view');
 
 		$this->form_validation->set_rules('t_title', 'Title', 'required|max_length[255]');
 		$this->form_validation->set_rules('t_desc', 'Description', 'required');
 		$this->form_validation->set_rules('t_priority', 'Priority', 'required|integer');
 		$this->form_validation->set_rules('t_due', 'Due date', '');
-		$this->form_validation->set_rules('t_complete', 'Completion date', '');
+		$this->form_validation->set_rules('t_comp', 'Completion date', '');
 		$this->form_validation->set_rules('t_status', 'Status', 'required');
 		$this->form_validation->set_rules('t_dev', 'Developer', '');
 		/* Date modified and date added done server side */
 		$this->form_validation->set_rules('t_comments', 'Comments', 'max_length[555]');
 		/* Set by handled by session data */
-		$this->form_validation->set_rules('t_week_com', 'Week commencing', 'max_length[15]');
 
 		$this->load->helper('date');
 
-		if($this->session->userdata('is_logged_in') == 1){
-			
-			$this->load->view('interactive_team_update_tasks');
+		if($this->session->userdata('is_logged_in')){
 
 			$datestring = "%d/%m/%Y";
 			$time = time();
@@ -123,8 +141,6 @@ class Interactive_team extends CI_Controller{
 			if($this->form_validation->run() == true){
 
 				$email = $this->session->userdata('email');
-
-				$id = $this->uri->segment(3);
 
 				$data = array(
 					't_title' => $this->input->post('t_title'),
@@ -136,11 +152,10 @@ class Interactive_team extends CI_Controller{
 					't_date_added' => mdate($datestring, $time),
 					't_date_mod' => mdate($datestring, $time),
 					't_comments' => $this->input->post('t_comments'),
-					't_set_by' => $email,
-					't_week_com' => $this->input->post('t_week_com')
+					't_set_by' => $email
 				); /* end of data array to be sent to the update_tasks model */
 
-				$this->interactive_team_model->update_tasks($id, $data);
+				$this->interactive_team_model->update_tasks($data);
 	
 			}else{
 				echo("<div class='error'>Update failed. <span><a href='mailto:ewan.valentine@boots.co.uk?Subject=Bug%20detected:%20/boots/interactive_team/update_tasks/'>e-mail bug?</a></span></div>");
@@ -180,5 +195,4 @@ class Interactive_team extends CI_Controller{
 		}
 		$this->load->view('footer');
 	}
-
 }

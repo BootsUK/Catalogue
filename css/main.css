@@ -582,3 +582,16 @@ button.submit:active {
         page-break-after: avoid;
     }
 }
+
+.lister{
+    background-color: #fff;
+}
+
+.main-container{
+    background-color: #fff;
+    padding:10px;
+}
+strong, b{
+    background-color: #fff !important;
+}
+

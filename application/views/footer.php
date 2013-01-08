@@ -9,11 +9,11 @@
                 <h3>footer</h3>
                 
                 <ul class="menu">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Developers Center</a></li>
-                    <li><a href="">Campaign Center</a></li>
-                    <li><a href="">Account</a></li>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Developers Center</li>
+                    <li>Campaign Center</li>
+                    <li>Account</li>
                 </ul>
              
             </footer>

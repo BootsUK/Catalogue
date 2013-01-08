@@ -6,9 +6,9 @@ echo validation_errors();
 
 echo "<ul class='alt'>";
 
-echo "<p>Enter title: ";
-echo form_input('t_title', 'Title');
-echo "</p>";
+echo "<li>Enter title: <br />";
+echo form_input('t_title');
+echo "</li>";
 
 $priority = array(
 	'1' => '1',
@@ -24,19 +24,19 @@ $priority = array(
 	);
 
 echo "<li>Enter description: <br />";
-echo form_textarea('t_desc', 'Description');
+echo form_textarea('t_desc');
 echo "</li>";
 
 echo "<li>Enter priority: <br />";
-echo form_dropdown('t_priority', $priority, '10');
+echo form_dropdown('t_priority', $priority);
 echo "</li>";
 
 echo "<li>Enter due date: <br />";
-echo form_input('t_due', 'Due date');
+echo form_input('t_due');
 echo "</li>";
 
 echo "<li>Enter Completion date: <br />";
-echo form_input('t_comp', 'Completion date');
+echo form_input('t_comp');
 echo "</li>";
 
 $status = array(
@@ -57,7 +57,7 @@ $status = array(
 	);
 
 echo "<li>Select status: <br />";
-echo form_dropdown('t_status', $status, 'Set');
+echo form_dropdown('t_status', $status);
 echo "</li>";
 
 $dev = array(
@@ -69,11 +69,11 @@ $dev = array(
 	);
  
 echo "<li>Enter developer name: <br />";
-echo form_dropdown('t_dev', $dev, 'None');
+echo form_dropdown('t_dev', $dev);
 echo "</li>";
 
 echo "<li>Enter comments: <br />";
-echo form_textarea('t_comments', 'Comments');
+echo form_textarea('t_comments');
 echo "</li>";
 
 $data = array(
@@ -84,9 +84,11 @@ $data = array(
     'content' => 'Submit'
 );
 
-echo "</ul>";
-
+echo "<li>";
 echo form_button($data);
+echo "</li>";
+
+echo "</ul>";
 
 echo form_close();
 

@@ -17,7 +17,6 @@ class Interactive_team_model extends CI_Model{
 		}else{
 			return false;
 		}
-
 	}
 
 	public function delete_tasks($id){
@@ -32,7 +31,6 @@ class Interactive_team_model extends CI_Model{
 		}else{
 			return false;
 		}
-
 	}
 
 	public function update_tasks($id, $data){
@@ -60,7 +58,18 @@ class Interactive_team_model extends CI_Model{
 		}else{
 			return false;
 		}
+	}
 
+	public function get_by_id($id){
+
+		$this->db->where('t_id', $id);
+		$query = $this->db->get('it_tasks');
+
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
 	}
 
 }

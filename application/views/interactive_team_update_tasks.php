@@ -2,13 +2,17 @@
 
 <?php 
 
+print_r($results['t_title']);
+
 echo form_open('interactive_team/update_tasks');
 
 echo validation_errors();
 
-echo "<p>Enter title: ";
-echo form_input('t_title', 'Title');
-echo "</p>";
+echo "<ul class='alt'>";
+
+echo "<li>Enter title: <br />";
+echo form_input('t_title', $results['t_title']);
+echo "</li>";
 
 $priority = array(
 	'1' => '1',
@@ -23,21 +27,21 @@ $priority = array(
 	'10' => '10'
 	);
 
-echo "<p>Enter description: ";
-echo form_textarea('t_desc', 'Description');
-echo "</p>";
+echo "<li>Enter description: <br />";
+echo form_textarea('t_desc', $results['t_desc']);
+echo "</li>";
 
-echo "<p>Enter priority: ";
-echo form_dropdown('t_priority', $priority, '10');
-echo "</p>";
+echo "<li>Enter priority: <br />";
+echo form_dropdown('t_priority', $results['t_priority']);
+echo "</li>";
 
-echo "<p>Enter due date: ";
-echo form_input('t_due', 'Due date');
-echo "</p>";
+echo "<li>Enter due date: <br />";
+echo form_input('t_due', $results['t_due']);
+echo "</li>";
 
-echo "<p>Enter Completion date: ";
-echo form_input('t_comp', 'Completion date');
-echo "</p>";
+echo "<li>Enter Completion date: <br />";
+echo form_input('t_comp', $results['t_comp']);
+echo "</li>";
 
 $status = array(
 	'Set' => 'Set',
@@ -56,9 +60,9 @@ $status = array(
 	'Cancelled' => 'Cancelled'
 	);
 
-echo "<p>Select status: ";
-echo form_dropdown('status', $status, 'Set');
-echo "</p>";
+echo "<li>Select status: <br /> ";
+echo form_dropdown('status', $status, $results['t_status']);
+echo "</li>";
 
 $dev = array(
 	'None' => 'None',
@@ -68,17 +72,15 @@ $dev = array(
 	'Matt Conde' => 'Matt Conde'
 	);
  
-echo "<p>Enter developer name: ";
-echo form_dropdown('t_dev', $dev, 'None');
-echo "</p>";
+echo "<li>Enter developer name: <br />";
+echo form_dropdown('t_dev', $dev, $results['t_dev']);
+echo "</li>";
 
-echo "<p>Enter comments: ";
-echo form_textarea('t_comments', 'Comments');
-echo "</p>";
+echo "<li>Enter comments: <br />";
+echo form_textarea('t_comments', $results['t_comments']);
+echo "</li>";
 
-echo "<p>Week commencing: ";
-echo form_input('t_week_com', 'Week commencing');
-echo "</p>";
+echo "<li>";
 
 $data = array(
     'name' => 'submit',
@@ -89,6 +91,10 @@ $data = array(
 );
 
 echo form_button($data);
+
+echo "</li>";
+
+echo "</ul>";
 
 echo form_close();
 
