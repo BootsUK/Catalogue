@@ -72,8 +72,7 @@ class Interactive_team extends CI_Controller{
 					't_date_added' => mdate($datestring, $time),
 					't_date_mod' => mdate($datestring, $time),
 					't_comments' => $this->input->post('t_comments'),
-					't_set_by' => $email,
-					't_week_com' => $this->input->post('t_week_com')
+					't_set_by' => $email
 				);
 				$this->interactive_team_model->add_tasks($data);
 			}

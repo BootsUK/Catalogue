@@ -13,7 +13,7 @@
 			echo "<td>" . $row['t_desc'] . "</td>";
 			echo "<td>" . $row['t_status'] . "</td>";
 			echo "<td>" . $row['t_date_mod'] . "</td>";
-			echo "<td><a href='#' onClick='confirm_action(\"update_tasks\"," . $row['t_id'] . ");'>Edit</a> || <a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'>Delete</a></td>";
+			echo "<td><a href='#' onClick='confirm_action(\"update_tasks\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='7' style='display: inline-block;'></span></a><a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='m'></span></a></td>";
 			echo "</tr>";
 		}
 
