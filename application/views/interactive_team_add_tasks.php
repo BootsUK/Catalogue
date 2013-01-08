@@ -4,6 +4,8 @@ echo form_open('interactive_team/add_tasks');
 
 echo validation_errors();
 
+echo "<ul class='alt'>";
+
 echo "<p>Enter title: ";
 echo form_input('t_title', 'Title');
 echo "</p>";
@@ -21,21 +23,21 @@ $priority = array(
 	'10' => '10'
 	);
 
-echo "<p>Enter description: ";
+echo "<li>Enter description: <br />";
 echo form_textarea('t_desc', 'Description');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Enter priority: ";
+echo "<li>Enter priority: <br />";
 echo form_dropdown('t_priority', $priority, '10');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Enter due date: ";
+echo "<li>Enter due date: <br />";
 echo form_input('t_due', 'Due date');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Enter Completion date: ";
+echo "<li>Enter Completion date: <br />";
 echo form_input('t_comp', 'Completion date');
-echo "</p>";
+echo "</li>";
 
 $status = array(
 	'Set' => 'Set',
@@ -54,9 +56,9 @@ $status = array(
 	'Cancelled' => 'Cancelled'
 	);
 
-echo "<p>Select status: ";
-echo form_dropdown('status', $status, 'Set');
-echo "</p>";
+echo "<li>Select status: <br />";
+echo form_dropdown('t_status', $status, 'Set');
+echo "</li>";
 
 $dev = array(
 	'None' => 'None',
@@ -66,17 +68,13 @@ $dev = array(
 	'Matt Conde' => 'Matt Conde'
 	);
  
-echo "<p>Enter developer name: ";
+echo "<li>Enter developer name: <br />";
 echo form_dropdown('t_dev', $dev, 'None');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Enter comments: ";
+echo "<li>Enter comments: <br />";
 echo form_textarea('t_comments', 'Comments');
-echo "</p>";
-
-echo "<p>Week commencing: ";
-echo form_input('t_week_com', 'Week commencing');
-echo "</p>";
+echo "</li>";
 
 $data = array(
     'name' => 'submit',
@@ -85,6 +83,8 @@ $data = array(
     'type' => 'submit',
     'content' => 'Submit'
 );
+
+echo "</ul>";
 
 echo form_button($data);
 

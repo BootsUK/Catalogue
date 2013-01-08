@@ -47,7 +47,6 @@ class Interactive_team extends CI_Controller{
 		/* Date modified and date added done server side */
 		$this->form_validation->set_rules('t_comments', 'Comments', 'max_length[555]');
 		/* Set by handled by session data */
-		$this->form_validation->set_rules('t_week_com', 'Week commencing', 'max_length[15]');
 
 		$this->load->helper('date');
 
@@ -78,6 +77,7 @@ class Interactive_team extends CI_Controller{
 				);
 				$this->interactive_team_model->add_tasks($data);
 			}
+
 		}else{
 			redirect('core/restricted');
 		}

@@ -5,12 +5,13 @@
 <?php 
 	echo "<section>";
 	echo "<table class='sortable'>";
-	echo "<tr><th>Title</th> <th>Description</th> <th>Status</th> <th>Last modified</th> <th>Edit//Delete</th></tr>";
+	echo "<thead><tr class='alt first last'><th rel='0' name='Title'>Title</th> <th rel='1' name='Description'>Description</th> <th rel='2' name='Status'>Status</th> <th rel='3' name='Last modified'>Last modified</th> <th rel='4' name='Edit//Delete'>Edit//Delete</th></tr></thead>";
 		
 		foreach($results as $row){
 			echo "<tr>";
 			echo "<td>" . $row['t_title'] . "</td>";
 			echo "<td>" . $row['t_desc'] . "</td>";
+			echo "<td>" . $row['t_status'] . "</td>";
 			echo "<td>" . $row['t_date_mod'] . "</td>";
 			echo "<td><a href='#' onClick='confirm_action(\"update_tasks\"," . $row['t_id'] . ");'>Edit</a> || <a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'>Delete</a></td>";
 			echo "</tr>";
