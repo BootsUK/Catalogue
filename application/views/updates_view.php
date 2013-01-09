@@ -11,7 +11,7 @@
 
 <script type="text/javascript">
  $('#FeedEk').FeedEk({
-   FeedUrl : 'https://github.com/bootsDevelopers/Catalogue/commits/master',
+   FeedUrl : 'https://github.com/BootsUK/Catalogue/commits/master',
    MaxCount : 50,
    ShowDesc : true,
    ShowPubDate:true

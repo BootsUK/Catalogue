@@ -13,7 +13,7 @@
 
 <script type="text/javascript">
  $('#feed').FeedEk({
-   FeedUrl : 'https://github.com/bootsDevelopers/Catalogue/commits/master.atom',
+   FeedUrl : 'https://github.com/BootsUK/Catalogue/commits/master.atom',
    MaxCount : 500,
    ShowDesc : true,
    ShowPubDate:true
