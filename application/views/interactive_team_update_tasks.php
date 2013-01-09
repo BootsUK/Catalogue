@@ -40,11 +40,11 @@ foreach($results as $row){
 	echo "</li>";
 
 	echo "<li>Enter due date: <br />";
-	echo form_input('t_due', $row['t_due']);
+	echo form_input('t_due', $row['t_due'], 'class="datepicker"');
 	echo "</li>";
 
 	echo "<li>Enter Completion date: <br />";
-	echo form_input('t_comp', $row['t_comp']);
+	echo form_input('t_comp', $row['t_comp'], 'class="datepicker"');
 	echo "</li>";
 
 	$status = array(

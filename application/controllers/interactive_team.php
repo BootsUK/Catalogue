@@ -133,8 +133,6 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->helper('date');
 
-		print "Debug stage 0\n";
-
 		if($this->session->userdata('is_logged_in')){
 
 			$datestring = "%d/%m/%Y";
@@ -143,8 +141,6 @@ class Interactive_team extends CI_Controller{
 			if($this->form_validation->run() == true){
 
 				$email = $this->session->userdata('email');
-
-				print "debug 1\n";
 
 				$data = array(
 					't_title' => $this->input->post('t_title'),
@@ -158,14 +154,10 @@ class Interactive_team extends CI_Controller{
 					't_set_by' => $email
 				); /* end of data array to be sent to the update_tasks model */
 
-				print "debug 2\n";
-
 				$id = $this->uri->segment(3);
 
 				$this->interactive_team_model->update_tasks($id, $data);
-
-				print "debug 3\n";
-			
+		
 			}else{
 				echo("<div class='error'>Update failed. <span><a href='mailto:ewan.valentine@boots.co.uk?Subject=Bug%20detected:%20/boots/interactive_team/update_tasks/'>e-mail bug?</a></span></div>");
 			} /* end of form validation if statement */
@@ -202,6 +194,26 @@ class Interactive_team extends CI_Controller{
 		}else{
 			redirect('core/restricted');
 		}
+		$this->load->view('footer');
+	}
+
+	public function detail_view(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$id = $this->uri->segment(3);
+
+			$data['results'] = $this->interactive_team_model->get_by_id($id);
+
+			$this->load->view('interactive_team_detailed_view', $data);
+
+		}else{
+			redirect('core/restricted');
+		}
+
 		$this->load->view('footer');
 	}
 }

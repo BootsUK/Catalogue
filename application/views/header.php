@@ -9,13 +9,19 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/normalize.min.css">
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/main.css">
         <link rel="stylesheet" href="http://evdatacenter.co.uk/99/css/kickstart.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <script type="text/javascript" src="http://evdatacenter.co.uk/99/js/kickstart.js"></script>
         <script type="text/javascript" src="http://evdatacenter.co.uk/99/js/prettify.js"></script>
+         <script>
+          $(function() {
+            $( ".datepicker" ).datepicker();
+          });
+        </script>
         <script src="js/main.js"></script>
 
         <script src="<?php echo base_url(); ?>js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>

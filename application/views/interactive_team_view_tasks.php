@@ -17,7 +17,7 @@
 		
 		foreach($results as $row){
 			echo "<tr>";
-			echo "<td><a href='view_details/'" . $row['t_id'] . "'>" . $row['t_title'] . "</a></td>";
+			echo "<td><a href='detail_view/" . $row['t_id'] . "'>" . $row['t_title'] . "</a></td>";
 			echo "<td>" . $row['t_desc'] . "</td>";
 			echo "<td>" . $row['t_status'] . "</td>";
 			echo "<td>" . $row['t_set_by'] . "</td>";
