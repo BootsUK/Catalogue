@@ -15,6 +15,9 @@ class Admin extends CI_Controller{
 
 	public function dashboard(){
 
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
 		if($this->session->userdata('email') == 'ewan.valentine@boots.co.uk'){
 
 			$users = $this->admin_model->display_all_users();
@@ -27,6 +30,8 @@ class Admin extends CI_Controller{
 		}else{
 			redirect('error_handler/error/' . __FUNCTION__ . '%20You aint no admin');
 		}
+
+		$this->load->view('footer');
 	}
 
 	public function add_example(){

@@ -1,24 +1,29 @@
-<div class="input_form">
+<h3>Sign-in</h3>
+
 <?php 
 
 echo form_open('account/check_credentials');
 
 echo validation_errors();
 
-echo "<p>Enter your e-mail: ";
+echo "<ul class='alt'>";
+
+echo "<li>Enter your e-mail: <br />";
 echo form_input('email');
-echo "</p>";
+echo "</li>";
 
-echo "<p>Enter your password: ";
+echo "<li>Enter your password: <br />";
 echo form_password('password');
-echo "</p>";
+echo "<br /></li>";
 
-echo "<p>";
+echo "<li>";
 echo form_submit('login_submit', 'Login');
-echo "</p>";
+echo "</li>";
+
+echo "</ul>";
 
 echo form_close();
 
 ?>
-</div>
+
 <a href="<?php echo base_url() . "account/signup"; ?>">Sign-up</a>
