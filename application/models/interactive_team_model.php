@@ -43,6 +43,7 @@ class Interactive_team_model extends CI_Model{
 		if($query == true){
 			return true;
 		}else{
+			print "Failed at model level.";
 			return false;
 		}
 	}

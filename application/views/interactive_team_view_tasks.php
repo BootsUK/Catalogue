@@ -17,13 +17,13 @@
 		
 		foreach($results as $row){
 			echo "<tr>";
-			echo "<td>" . $row['t_title'] . "</td>";
+			echo "<td><a href='view_details/'" . $row['t_id'] . "'>" . $row['t_title'] . "</a></td>";
 			echo "<td>" . $row['t_desc'] . "</td>";
 			echo "<td>" . $row['t_status'] . "</td>";
 			echo "<td>" . $row['t_set_by'] . "</td>";
 			echo "<td>" . $row['t_priority'] . "</td>";
 			echo "<td>" . $row['t_date_mod'] . "</td>";
-			echo "<td><a href='#' onClick='confirm_action(\"update_tasks\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='7' style='display: inline-block;'></span></a><a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='m'></span></a></td>";
+			echo "<td><a href='#' onClick='confirm_action(\"update_prepare\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='7' style='display: inline-block;'></span></a><a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='m'></span></a></td>";
 			echo "</tr>";
 		}
 
