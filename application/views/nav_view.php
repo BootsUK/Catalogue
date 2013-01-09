@@ -23,6 +23,7 @@
                             <li><a href="http://evdatacenter.co.uk/boots/developers_center">Developers center</a>
                                 <ul>
                                     <li><a href="http://evdatacenter.co.uk/boots/developers_center/updates">Updates</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/developers_center/wish_list">Wish list</a></li>
                                 </ul>
                         </li>
                 </ul>

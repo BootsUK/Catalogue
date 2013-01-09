@@ -35,4 +35,11 @@ class Developers_center extends CI_Controller{
 
 	}
 
+	public function wish_list(){
+		$this->load->view('header');
+		$this->load->view('nav_view');
+		$this->load->view('wish_list_view');
+		$this->load->view('footer');
+	}
+
 }

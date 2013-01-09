@@ -1,3 +1,4 @@
+<br style="clear:both;" />
 
             </div> <!-- #main -->
         </div> <!-- #main-container -->
@@ -6,15 +7,7 @@
             
             <footer>
             
-                <h3>footer</h3>
-                
-                <ul class="menu">
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Developers Center</li>
-                    <li>Campaign Center</li>
-                    <li>Account</li>
-                </ul>
+               <p> <small style="color:#fff;">Copyright BootsUK 2013 || <a href="http://ewanvalentine.co.uk" style="color:#fff;">Ewan Valentine 2013</a> </small> </p>
              
             </footer>
         

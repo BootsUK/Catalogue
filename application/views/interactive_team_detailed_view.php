@@ -17,6 +17,8 @@ foreach($results as $row){
 
 	echo "<p><b>Last modified:</b><br />" . $row['t_date_mod'] . "</p>";
 
+	echo "<p><b>Modified by:</b><br />" . $row['t_mod_by'] . "</p>";
+
 	echo "<p><b>Comments:</b> <br />" . $row['t_comments'] . "</p>";
 
 	echo "<p><b>Set by:</b><br />" . $row['t_set_by'] . "</p>";

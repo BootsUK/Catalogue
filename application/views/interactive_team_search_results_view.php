@@ -1,4 +1,4 @@
-<h3>View tasks</h3>
+<h3>Search results</h3>
 
 <section class='lister'>
 
@@ -37,7 +37,7 @@
 
 function confirm_action(action, id){
 
-	if(action == "update_prepare"){
+	if(action == "update_tasks"){
 		var r = confirm("Are you sure you wish to edit this entry?");
 	}else{
 		var r = confirm("Are you sure you wish to delete this entry?");

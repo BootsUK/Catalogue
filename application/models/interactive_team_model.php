@@ -73,4 +73,25 @@ class Interactive_team_model extends CI_Model{
 		}
 	}
 
+	public function search_tasks($search_term, $search_crit){
+
+		$query = $this->db->query("SELECT * FROM it_tasks WHERE $search_crit LIKE '%$search_term%'");
+
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function get_dev($dev){
+
+		$query = $this->db->query('SELECT * FROM users WHERE first_name, last_name = ' . $dev);
+
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
 }

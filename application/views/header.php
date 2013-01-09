@@ -24,10 +24,10 @@
         </script>
         <script src="js/main.js"></script>
 
-        <script src="<?php echo base_url(); ?>js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+        <script src="http://evdatacenter.co.uk/boots/js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
     </head>
     
     <body style="background-image:url('<?php echo base_url(); ?>/img/grid.png');">
-        <!--[if lt IE 7]>
+        <!--[if lt IE 9]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->

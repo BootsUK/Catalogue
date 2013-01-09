@@ -20,8 +20,11 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('nav_view');
     	
 		if($this->session->userdata('is_logged_in')){
+
 			$this->data['results'] = $this->interactive_team_model->view_tasks();
+			
 			$this->load->view('interactive_team_view_tasks', $this->data);
+		
 		}else{
 			redirect('core/restricted');
 		} /* End of log-in checked functionality */
@@ -69,10 +72,32 @@ class Interactive_team extends CI_Controller{
 					't_dev' => $this->input->post('t_dev'),
 					't_date_added' => mdate($datestring, $time),
 					't_date_mod' => mdate($datestring, $time),
+					't_mod_by' => $email,
 					't_comments' => $this->input->post('t_comments'),
 					't_set_by' => $email
 				);
+
+				$this->load->library('email', array('mailtype'=>'html'));
+
+				$message = "<b>Page</b>: " . $data['t_title'] . "<br />\n";
+				$message .= "<b>Description</b>: " . $data['t_desc'] . "<br />\n";
+				$message .= "<b>Priority</b>: " . $data['t_priority'] . "<br />\n";
+				$message .= "<b>Due</b>: " . $data['t_due'] . "<br />\n";
+				$message .= "<b>Complete</b>: " . $data['t_comp'] . "<br />\n";
+				$message .= "<b>Status</b>: " . $data['t_status'] . "<br />\n";
+				$message .= "<b>Date modified</b>: " . $data['t_date_mod'] . "<br />\n";
+				$message .= "<b>Modified by</b>: " . $data['t_mod_by'] . "<br />\n";
+				$message .= "<b>Comments</b>: " . $data['t_comments'] . "<br />\n";
+
+				$this->email->from('boots@evdatacenter.co.uk', "Admin");
+				$this->email->to('ewan.valentine@boots.co.uk');
+				$this->email->subject('New task added');
+				$this->email->message($message);
+				$this->email->send();
+
 				$this->interactive_team_model->add_tasks($data);
+				
+				redirect('error_handler/success/' . __FUNCTION__ . '_task_added');
 			}
 
 		}else{
@@ -149,10 +174,30 @@ class Interactive_team extends CI_Controller{
 					't_due' => $this->input->post('t_due'),
 					't_comp' => $this->input->post('t_comp'),
 					't_status' => $this->input->post('t_status'),
+					't_dev' => $this->input->post('t_dev'),
 					't_date_mod' => mdate($datestring, $time),
-					't_comments' => $this->input->post('t_comments'),
-					't_set_by' => $email
+					't_mod_by' => $email,
+					't_comments' => $this->input->post('t_comments')
 				); /* end of data array to be sent to the update_tasks model */
+
+				$this->load->library('email', array('mailtype'=>'html'));
+
+				$message = "<b>Page</b>: " . $data['t_title'] . "<br />\n";
+				$message .= "<b>Description</b>: " . $data['t_desc'] . "<br />\n";
+				$message .= "<b>Priority</b>: " . $data['t_priority'] . "<br />\n";
+				$message .= "<b>Due</b>: " . $data['t_due'] . "<br />\n";
+				$message .= "<b>Complete</b>: " . $data['t_comp'] . "<br />\n";
+				$message .= "<b>Status</b>: " . $data['t_status'] . "<br />\n";
+				$message .= "<b>Developer</b>: " . $data['t_de'] . "<br />\n";
+				$message .= "<b>Date modified</b>: " . $data['t_date_mod'] . "<br />\n";
+				$message .= "<b>Modified by</b>: " . $data['t_mod_by'] . "<br />\n";
+				$message .= "<b>Comments</b>: " . $data['t_comments'] . "<br />\n";
+
+				$this->email->from('boots@evdatacenter.co.uk', "Admin");
+				$this->email->to('ewan.valentine@boots.co.uk');
+				$this->email->subject('New task update: ' . $data['t_title']);
+				$this->email->message($message);
+				$this->email->send();
 
 				$id = $this->uri->segment(3);
 
@@ -193,11 +238,29 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('header');
 		$this->load->view('nav_view');
 
-		if($this->session->userdata('is_logged_in') == 1){
+		if($this->session->userdata('is_logged_in')){
 			$this->load->view('interactive_team_search_tasks');
 		}else{
 			redirect('core/restricted');
 		}
+		$this->load->view('footer');
+	}
+
+	public function search_results(){
+		
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$search_term = $this->input->post('search_term');
+			$search_crit = $this->input->post('search_criteria');
+
+			$this->data['results'] = $this->interactive_team_model->search_tasks($search_term, $search_crit);
+
+			$this->load->view('interactive_team_search_results_view', $this->data);
+		}
+
 		$this->load->view('footer');
 	}
 

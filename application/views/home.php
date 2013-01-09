@@ -1,4 +1,4 @@
-<article>
+<article class="homePage">
 	<h2>Home</h2>
 	
 	<p>The good developers in the content team have came up with a way for you guys to track work, show external clients templates, layouts and components as well as keep track of campaign progress.</p>

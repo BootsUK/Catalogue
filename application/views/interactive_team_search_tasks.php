@@ -1,20 +1,40 @@
-<h3>Search taks</h3>
+<h3>Search tasks</h3>
 
 <?php 
 
-echo form_open('interactive_team/search_tasks');
+echo form_open('interactive_team/search_results');
 
 echo validation_errors();
 
-echo form_input();
+echo "<ul class='alt'>";
+
+echo "<li>Enter a search term<br />";
+echo form_input('search_term', 'Search term');
+echo "</li><br/>";
 
 $criteria = array(
-	'Title' => 't_title',
-	'Description' => 't_desc',
-	'Priority' => 't_priority'
+	't_tile' => 'Title',
+	't_desc' => 'Description',
+	't_priority' => 'Priority',
+	't_due' => 'Due date'
 	);
 
-echo form_dropdown();
+echo "<li>";
+echo form_dropdown('search_criteria', $criteria);
+echo "</li>";
+
+$data = array(
+    'name' => 'submit',
+    'value' => 'true',
+    'type' => 'submit',
+    'content' => 'Submit'
+);
+
+echo "<li>";
+echo form_button($data);
+echo "</li>";
+
+echo "</ul>";
 
 echo form_close();
 
