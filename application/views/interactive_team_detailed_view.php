@@ -11,7 +11,7 @@ foreach($results as $row){
 
 	echo "<p><b>Due:</b><br />" . $row['t_due'] . "</p>";
 
-	echo "<p><b>Completion date:</b><br />" . $row['t_comp'] . "</p>";
+	echo "<p><b>Completion:</b><br />" . $row['t_comp'] . "</p>";
 
 	echo "<p><b>Status:</b><br />" . $row['t_status'] . "</p>";
 

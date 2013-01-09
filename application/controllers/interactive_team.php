@@ -157,9 +157,13 @@ class Interactive_team extends CI_Controller{
 				$id = $this->uri->segment(3);
 
 				$this->interactive_team_model->update_tasks($id, $data);
+
+				redirect('error_handler/success/' . __FUNCTION__);
 		
 			}else{
-				echo("<div class='error'>Update failed. <span><a href='mailto:ewan.valentine@boots.co.uk?Subject=Bug%20detected:%20/boots/interactive_team/update_tasks/'>e-mail bug?</a></span></div>");
+
+				redirect('error_handler/error/' . __FUNCTION__);
+				
 			} /* end of form validation if statement */
 
 		}else{
@@ -179,7 +183,7 @@ class Interactive_team extends CI_Controller{
 			$this->load->view('interactive_team_home_view');
 
 		}else{
-			redirect('http://evdatacenter.co.uk/boots/core/restricted');
+			redirect('core/restricted');
 		} /* end of user restricted functionality */
 
 		$this->load->view('footer');
@@ -216,4 +220,5 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->view('footer');
 	}
+
 }

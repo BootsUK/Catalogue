@@ -1,0 +1,1 @@
+<div class="notify error"><?php  echo $err_id; ?> failed. <span><a href='mailto:ewan.valentine@boots.co.uk?Subject=Bug%20detected:%20/boots/interactive_team/update_tasks/'>e-mail bug?</a></span></div>
