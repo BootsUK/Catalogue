@@ -25,7 +25,7 @@ class Admin extends CI_Controller{
 					print("They aint no users");
 				}
 		}else{
-			print("You aint no admin");
+			redirect('error_handler/error/' . __FUNCTION__ . '%20You aint no admin');
 		}
 	}
 

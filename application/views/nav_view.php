@@ -17,14 +17,12 @@
                                 <ul>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/display_tasks">View tasks</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/add_tasks">Add tasks</a></li>
-                                    <li><a href="http://evdatacenter.co.uk/boots/search/interactive_team">Search tasks</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/interactive_team/search_tasks">Search tasks</a></li>
                                 </ul>
                             </li>
                             <li><a href="http://evdatacenter.co.uk/boots/developers_center">Developers center</a>
                                 <ul>
                                     <li><a href="http://evdatacenter.co.uk/boots/developers_center/updates">Updates</a></li>
-                                    <li><a href="http://evdatacenter.co.uk/boots/developers_center/developers_roles">Who does what?</a></li>
-                                    <li><a href="http://evdataventer.co.uk/boots/developers_center/site_structure">Site structure</a></li>
                                 </ul>
                         </li>
                 </ul>
