@@ -136,45 +136,12 @@ class Interactive_team_model extends CI_Model{
 		}
 	}
 
-	public function get_scores_ewan(){
-		
-		$query = $this->db->query("SELECT COUNT(t_c_dev) FROM it_complete_tasks WHERE t_c_dev='ewan.valentine@boots.co.uk'");
-
-		if($query->num_rows() > 0){
-			return $query->result_array();
-		}else{
-			return false;
-		}
-	}
-
-	public function get_scores_tom(){
-
-		$query = $this->db->query("SELECT COUNT(t_c_dev) FROM it_complete_tasks WHERE t_c_dev='tom.hill@boots.co.uk'");
-
-		if($query->num_rows() > 0){
-			return $query->result_array();
-		}else{
-			return false;
-		}
-	}
-
-	public function get_scores_mike(){
-
-		$query = $this->db->query("SELECT COUNT(t_c_dev) FROM it_complete_tasks WHERE t_c_dev='mike.titmus@boots.co.uk'");
-
-		if($query->num_rows() > 0){
-			return $query->results_array();
-		}else{
-			return false;
-		}
-	}
-
 	public function get_complete_list(){
 
 		$query = $this->db->query("SELECT * FROM it_complete_tasks");
 
 		if($query->num_rows() > 0){
-			return $query->results_array();
+			return $query->result_array();
 		}else{
 			return false;
 		}
