@@ -35,9 +35,11 @@ echo "<li>Enter due date: <br />";
 echo form_input('t_due', '', 'class="datepicker"');
 echo "</li>";
 
+/* Gunna make this auto on complete
 echo "<li>Enter Completion date: <br />";
 echo form_input('t_comp', '', 'class="datepicker"');
 echo "</li>";
+*/
 
 $status = array(
 	'Set' => 'Set',

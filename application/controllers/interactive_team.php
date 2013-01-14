@@ -14,6 +14,24 @@ class Interactive_team extends CI_Controller{
 		$this->home();
 	}
 
+	public function home(){
+	
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$this->data['results'] = $this->interactive_team_model->get_complete_list();
+
+			$this->load->view('interactive_team_home_view', $this->data);
+
+		}else{
+			redirect('core/restricted');
+		} /* end of user restricted functionality */
+
+		$this->load->view('footer');
+	}
+
 	public function display_tasks(){
 
 		$this->load->view('header');
@@ -219,21 +237,6 @@ class Interactive_team extends CI_Controller{
 
 	}
 
-	public function home(){
-		$this->load->view('header');
-		$this->load->view('nav_view');
-
-		if($this->session->userdata('is_logged_in')){
-
-			$this->load->view('interactive_team_home_view');
-
-		}else{
-			redirect('core/restricted');
-		} /* end of user restricted functionality */
-
-		$this->load->view('footer');
-	}
-
 	public function search_tasks(){
 		$this->load->view('header');
 		$this->load->view('nav_view');
@@ -276,6 +279,24 @@ class Interactive_team extends CI_Controller{
 			$data['results'] = $this->interactive_team_model->get_by_id($id);
 
 			$this->load->view('interactive_team_detailed_view', $data);
+
+		}else{
+			redirect('core/restricted');
+		}
+
+		$this->load->view('footer');
+	}
+
+	public function save_complete_task(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$id = $this->uri->segment(3);
+
+			$this->interactive_team_model->save_complete_task($id);
 
 		}else{
 			redirect('core/restricted');

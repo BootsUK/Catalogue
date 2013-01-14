@@ -23,7 +23,9 @@
 			echo "<td>" . $row['t_set_by'] . "</td>";
 			echo "<td>" . $row['t_priority'] . "</td>";
 			echo "<td>" . $row['t_date_mod'] . "</td>";
-			echo "<td><a href='#' onClick='confirm_action(\"update_prepare\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='7' style='display: inline-block;'></span></a> <a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='m'></span></a></td>";
+			echo "<td><a href='#' onClick='confirm_action(\"update_prepare\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='7' style='display: inline-block;'> </span></a>";
+			echo "<a href='#' onClick='confirm_action(\"delete_tasks\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='m' style='display: inline-block;'> </span></a>";
+			echo "<a href='#' onClick='confirm_action(\"save_complete_task\"," . $row['t_id'] . ");'><span class='icon gray' data-icon='c' style='display: inline-block;'> </span></a> </td>";
 			echo "</tr>";
 		}
 

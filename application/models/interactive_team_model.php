@@ -94,4 +94,89 @@ class Interactive_team_model extends CI_Model{
 			return false;
 		}
 	}
+
+	public function save_complete_task($id){
+
+		$this->db->where('t_id', $id);
+		$completed_solution = $this->db->get('it_tasks');
+
+		if($completed_solution){
+			$row = $completed_solution->row();
+
+			$this->load->helper('date');
+
+			$datestring = "%d/%m/%Y";
+			$time = time();
+
+			$data = array(
+				't_c_title' => $row->t_title,
+				't_c_desc' => $row->t_desc,
+				't_c_priority' => $row->t_priority,
+				't_c_due' => $row->t_due,
+				't_c_comp' => mdate($datestring, $time),
+				't_c_status' => $row->t_status,
+				't_c_dev' => $row->t_dev,
+				't_c_date_added' => $row->t_date_added,
+				't_c_date_mod' => $row->t_date_mod,
+				't_c_mod_by' => $row->t_mod_by,
+				't_c_comments' => $row->t_comments,
+				't_c_set_by' => $row->t_set_by
+				);
+
+			$did_comp_task = $this->db->insert('it_complete_tasks', $data);
+
+		}
+
+		if($did_comp_task){
+			$this->db->where('t_id', $id);
+			$this->db->delete('it_tasks');
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public function get_scores_ewan(){
+		
+		$query = $this->db->query("SELECT COUNT(t_c_dev) FROM it_complete_tasks WHERE t_c_dev='ewan.valentine@boots.co.uk'");
+
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function get_scores_tom(){
+
+		$query = $this->db->query("SELECT COUNT(t_c_dev) FROM it_complete_tasks WHERE t_c_dev='tom.hill@boots.co.uk'");
+
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function get_scores_mike(){
+
+		$query = $this->db->query("SELECT COUNT(t_c_dev) FROM it_complete_tasks WHERE t_c_dev='mike.titmus@boots.co.uk'");
+
+		if($query->num_rows() > 0){
+			return $query->results_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function get_complete_list(){
+
+		$query = $this->db->query("SELECT * FROM it_complete_tasks");
+
+		if($query->num_rows() > 0){
+			return $query->results_array();
+		}else{
+			return false;
+		}
+	}
 }

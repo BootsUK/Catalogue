@@ -34,6 +34,22 @@ class Admin extends CI_Controller{
 		$this->load->view('footer');
 	}
 
+	public function add_example(){
+
+	}
+
+	public function delete_example(){
+
+	}
+
+	public function update_example(){
+
+	}
+
+	public function view_example(){
+
+	}
+
 	public function create_user(){
 
 	}

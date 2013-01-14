@@ -1,5 +1,4 @@
 Catalogue
 =========
 
-Catalogue for layouts, templates and components.
-By Ewan Valentine
+Catalogue for layouts, templates and components

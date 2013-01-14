@@ -113,7 +113,7 @@ class Account extends CI_Controller {
 			
 			$this->load->library('email', array('mailtype'=>'html'));
 
-			$message = "<p>The following user requested a Boots technical catalogue account: </p>";
+			$message = "<p>The following user requested a Boots CRM account: </p>";
 			$message .= "<p><a href='" . base_url() . "account/confirm_signup/$key'>Click to submit an account request.</a></p>";
 
 			$this->email->from('boots@evdatacenter.co.uk', "Admin");
