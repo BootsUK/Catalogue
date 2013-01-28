@@ -43,7 +43,6 @@ class Interactive_team_model extends CI_Model{
 		if($query == true){
 			return true;
 		}else{
-			print "Failed at model level.";
 			return false;
 		}
 	}
@@ -52,7 +51,7 @@ class Interactive_team_model extends CI_Model{
 
 		// View all tasks
 
-		$query = $this->db->query("SELECT * FROM it_tasks ORDER BY t_id");
+		$query = $this->db->query("SELECT * FROM it_tasks ORDER BY t_priority");
 
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -138,7 +137,7 @@ class Interactive_team_model extends CI_Model{
 
 	public function get_complete_list(){
 
-		$query = $this->db->query("SELECT * FROM it_complete_tasks");
+		$query = $this->db->query("SELECT * FROM it_complete_tasks ORDER BY t_c_comp DESC");
 
 		if($query->num_rows() > 0){
 			return $query->result_array();

@@ -305,4 +305,16 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('footer');
 	}
 
+	public function priority_scale(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+			$this->load->view('priority_scale');
+		}
+		
+		$this->load->view('footer');	
+	}
+
 }

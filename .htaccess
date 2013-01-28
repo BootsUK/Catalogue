@@ -15,7 +15,8 @@
 ### github.com/h5bp/server-configs
 ###
 
-
+php_value upload_max_filesize 64M
+php_value post_max_size       64M
 
 # ----------------------------------------------------------------------
 # Better website experience for IE users

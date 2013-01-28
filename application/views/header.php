@@ -19,8 +19,7 @@
         <script type="text/javascript" src="http://evdatacenter.co.uk/99/js/prettify.js"></script>
          <script>
           $(function() {
-            $( ".datepicker" ).datepicker();
-
+            $( ".datepicker" ).datepicker({dateFormat: 'dd/mm/yy'});
           });
         </script>
         <script src="js/main.js"></script>
