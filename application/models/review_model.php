@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Review_model extends CI_Controller{
+class Review_model extends CI_Model{
 
 	public function __construct(){
 		parent::__construct();
@@ -17,16 +17,14 @@ class Review_model extends CI_Controller{
 		}
 	}
 
-	public function insert_review($review){
+	public function insert_review($data){
 
-		$query = $this->db->insert('reviews', $review);
+		$query = $this->db->insert('reviews', $data);
 
-		if($query == 1){
+		if($query){
 			return true;
 		}else{
 			return false;
 		}
 	}
 }
-
-

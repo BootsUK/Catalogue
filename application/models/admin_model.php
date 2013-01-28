@@ -14,7 +14,7 @@ class Admin_model extends CI_Model{
 
 		$query = $this->db->query("SELECT * FROM users ORDER BY id");
 	
-		if($query->num_rows) {
+		if($query->num_rows){
     		return $query->result_array();
     	}else{
             return false; 

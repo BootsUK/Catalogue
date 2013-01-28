@@ -5,8 +5,12 @@
 
 <br>
 
+<br>
+
 <label for="r_review">Review</label>
 <textarea name="r_review" id="" cols="30" rows="10"></textarea>
+
+<br>
 
 <br>
 
@@ -21,8 +25,12 @@
 
 <br>
 
+<br>
+
 <label for="r_score">Score</label>
 <input type="number" name="r_score">
+
+<br>
 
 <br>
 
