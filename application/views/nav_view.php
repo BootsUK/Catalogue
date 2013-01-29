@@ -19,6 +19,8 @@
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/add_tasks">Add tasks</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/search_tasks">Search tasks</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/priority_scale">Priority scale explained</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/review/review_form">Submit a review</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/review/">Reviews</a></li>
                                 </ul>
                             </li>
                             <li><a href="http://evdatacenter.co.uk/boots/developers_center">Developers center</a>

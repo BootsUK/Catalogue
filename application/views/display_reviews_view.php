@@ -23,7 +23,7 @@ foreach($results as $row){
 		echo "<li>User:<br />" . $row['r_user'] . "</li>";
 		echo "<li>Date:<br />" . $row['r_date'] . "</li>";
 		echo "<li>Score:<br />" . $row['r_score'] . "</li>";
-	echo "</ul>";
+	echo "</ul><br />";
 }
 
 ?>

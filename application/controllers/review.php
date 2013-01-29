@@ -76,7 +76,7 @@ class Review extends CI_Controller{
 				redirect('error_handler/success/' . __FUNCTION__ . '_review_submitted');
 
 			}else{
-				echo "no";
+				
 			}
 
 		}else{
