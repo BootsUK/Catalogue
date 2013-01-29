@@ -43,12 +43,6 @@ foreach($results as $row){
 	echo form_input('t_due', $row['t_due'], 'class="datepicker"');
 	echo "</li>";
 
-	/* Gunna be automatic
-	echo "<li>Enter Completion date: <br />";
-	echo form_input('t_comp', $row['t_comp'], 'class="datepicker"');
-	echo "</li>";
-	*/
-
 	$status = array(
 		'Set' => 'Set',
 		'Being briefed' => 'Being briefed',
