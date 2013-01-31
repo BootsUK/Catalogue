@@ -55,6 +55,7 @@ $status = array(
 	'Under final review phase' => 'Under final review phase',
 	'Complete' => 'Complete',
 	'On-hold' => 'On-hold',
+	'On-Going' => 'On-Going'
 	'Cancelled' => 'Cancelled'
 	);
 
@@ -67,7 +68,8 @@ $dev = array(
 	'Ewan Valentine' => 'Ewan Valentine',
 	'Mike Titmus' => 'Mike Titmus',
 	'Tom Hill' => 'Tom Hill',
-	'Matt Conde' => 'Matt Conde'
+	'Matt Conde' => 'Matt Conde',
+	'Michael Ryan' => 'Michael Ryan'
 	);
  
 echo "<li>Enter developer name: <br />";

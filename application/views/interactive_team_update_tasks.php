@@ -57,6 +57,7 @@ foreach($results as $row){
 		'Under final review phase' => 'Under final review phase',
 		'Complete' => 'Complete',
 		'On-hold' => 'On-hold',
+		'On-going' => 'On-going',
 		'Cancelled' => 'Cancelled'
 		);
 
@@ -69,7 +70,8 @@ foreach($results as $row){
 		'Ewan Valentine' => 'Ewan Valentine',
 		'Mike Titmus' => 'Mike Titmus',
 		'Tom Hill' => 'Tom Hill',
-		'Matt Conde' => 'Matt Conde'
+		'Matt Conde' => 'Matt Conde',
+		'Michael Ryan' => 'Michael Ryan'
 		);
 	 
 	echo "<li>Enter developer name: <br />";

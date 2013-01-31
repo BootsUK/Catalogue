@@ -46,6 +46,7 @@ $status = array(
 	'Under final review phase' => 'Under final review phase',
 	'Complete' => 'Complete',
 	'On-hold' => 'On-hold',
+	'On-going' => 'On-going',
 	'Cancelled' => 'Cancelled'
 	);
 
