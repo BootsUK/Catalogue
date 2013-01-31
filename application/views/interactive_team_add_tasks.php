@@ -76,6 +76,10 @@ echo "<li>Enter developer name: <br />";
 echo form_dropdown('t_dev', $dev);
 echo "</li>";
 
+echo "<li>Enter Stakeholder: <br />";
+echo form_input('t_sh', $stakeholder);
+echo "</li>";
+
 echo "<li>Enter comments: <br />";
 echo form_textarea('t_comments');
 echo "</li>";

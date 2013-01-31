@@ -115,6 +115,7 @@ class Interactive_team_model extends CI_Model{
 				't_c_comp' => mdate($datestring, $time),
 				't_c_status' => $row->t_status,
 				't_c_dev' => $row->t_dev,
+				't_c_sh' => $row->t_sh,
 				't_c_date_added' => $row->t_date_added,
 				't_c_date_mod' => $row->t_date_mod,
 				't_c_mod_by' => $row->t_mod_by,

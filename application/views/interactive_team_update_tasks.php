@@ -78,6 +78,10 @@ foreach($results as $row){
 	echo form_dropdown('t_dev', $dev, $row['t_dev']);
 	echo "</li>";
 
+	echo "<li>Enter a Stakeholder name: <br />";
+	echo form_input('t_sh', $row['t_sh']);
+	echo "</li>";
+
 	echo "<li>Enter comments: <br />";
 	echo form_textarea('t_comments', $row['t_comments']);
 	echo "</li>";

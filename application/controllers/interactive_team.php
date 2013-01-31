@@ -63,6 +63,7 @@ class Interactive_team extends CI_Controller{
 		$this->form_validation->set_rules('t_complete', 'Completion date', '');
 		$this->form_validation->set_rules('t_status', 'Status', 'required');
 		$this->form_validation->set_rules('t_dev', 'Developer', '');
+		$this->form_validation->set_rules('t_sh', 'Stakeholder', 'required');
 		/* Date modified and date added done server side */
 		$this->form_validation->set_rules('t_comments', 'Comments', 'max_length[555]');
 		/* Set by handled by session data */
@@ -88,6 +89,7 @@ class Interactive_team extends CI_Controller{
 					't_comp' => $this->input->post('t_comp'),
 					't_status' => $this->input->post('t_status'),
 					't_dev' => $this->input->post('t_dev'),
+					't_sh' => $this->input->post('t_sh'),
 					't_date_added' => mdate($datestring, $time),
 					't_date_mod' => mdate($datestring, $time),
 					't_mod_by' => $email,
@@ -103,6 +105,7 @@ class Interactive_team extends CI_Controller{
 				$message .= "<b>Due</b>: " . $data['t_due'] . "<br />\n";
 				$message .= "<b>Complete</b>: " . $data['t_comp'] . "<br />\n";
 				$message .= "<b>Status</b>: " . $data['t_status'] . "<br />\n";
+				$message .= "<b>Stakeholder: </b>" . $data['t_sh'] . "<br />\n";
 				$message .= "<b>Date modified</b>: " . $data['t_date_mod'] . "<br />\n";
 				$message .= "<b>Modified by</b>: " . $data['t_mod_by'] . "<br />\n";
 				$message .= "<b>Comments</b>: " . $data['t_comments'] . "<br />\n";
@@ -170,6 +173,7 @@ class Interactive_team extends CI_Controller{
 		$this->form_validation->set_rules('t_comp', 'Completion date', '');
 		$this->form_validation->set_rules('t_status', 'Status', 'required');
 		$this->form_validation->set_rules('t_dev', 'Developer', '');
+		$this->form_validation->set_rules('t_sh', 'Stakeholder', 'required');
 		/* Date modified and date added done server side */
 		$this->form_validation->set_rules('t_comments', 'Comments', 'max_length[555]');
 		/* Set by handled by session data */
@@ -193,6 +197,7 @@ class Interactive_team extends CI_Controller{
 					't_comp' => $this->input->post('t_comp'),
 					't_status' => $this->input->post('t_status'),
 					't_dev' => $this->input->post('t_dev'),
+					't_sh' => $this->input->post('t_sh'),
 					't_date_mod' => mdate($datestring, $time),
 					't_mod_by' => $email,
 					't_comments' => $this->input->post('t_comments')
@@ -207,6 +212,7 @@ class Interactive_team extends CI_Controller{
 				$message .= "<b>Complete</b>: " . $data['t_comp'] . "<br />\n";
 				$message .= "<b>Status</b>: " . $data['t_status'] . "<br />\n";
 				$message .= "<b>Developer</b>: " . $data['t_de'] . "<br />\n";
+				$message .= "<b>Stakeholder</b>: " . $data['t_sh'] . "<br />\n";
 				$message .= "<b>Date modified</b>: " . $data['t_date_mod'] . "<br />\n";
 				$message .= "<b>Modified by</b>: " . $data['t_mod_by'] . "<br />\n";
 				$message .= "<b>Comments</b>: " . $data['t_comments'] . "<br />\n";
@@ -263,7 +269,6 @@ class Interactive_team extends CI_Controller{
 
 			$this->load->view('interactive_team_search_results_view', $this->data);
 		}
-
 		$this->load->view('footer');
 	}
 
