@@ -63,7 +63,12 @@ echo "<li>Select status: <br />";
 echo form_dropdown('t_status', $status);
 echo "</li>";
 
-$dev = array(
+$this->db->where('role', 'developer');
+$dev = $this->db->get('users');
+
+print_r($dev->result_array());
+
+$old = array(
 	'None' => 'None',
 	'Ewan Valentine' => 'Ewan Valentine',
 	'Mike Titmus' => 'Mike Titmus',
@@ -73,7 +78,7 @@ $dev = array(
 	);
  
 echo "<li>Enter developer name: <br />";
-echo form_dropdown('t_dev', $dev);
+echo form_dropdown('t_dev', $old);
 echo "</li>";
 
 echo "<li>Enter Stakeholder: <br />";

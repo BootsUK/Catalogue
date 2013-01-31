@@ -173,7 +173,7 @@ class Interactive_team extends CI_Controller{
 		$this->form_validation->set_rules('t_comp', 'Completion date', '');
 		$this->form_validation->set_rules('t_status', 'Status', 'required');
 		$this->form_validation->set_rules('t_dev', 'Developer', '');
-		$this->form_validation->set_rules('t_sh', 'Stakeholder', 'required');
+		$this->form_validation->set_rules('t_sh', 'Stakeholder', '');
 		/* Date modified and date added done server side */
 		$this->form_validation->set_rules('t_comments', 'Comments', 'max_length[555]');
 		/* Set by handled by session data */

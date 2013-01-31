@@ -15,7 +15,7 @@ foreach($results as $row){
 
 	echo "<p><b>Status:</b><br />" . $row['t_status'] . "</p>";
 
-	echo "<p><b>Stakeholder: " . $row['t_sh'] . "</p>";
+	echo "<p><b>Stakeholder: </b>" . $row['t_sh'] . "</p>";
 
 	echo "<p><b>Last modified:</b><br />" . $row['t_date_mod'] . "</p>";
 
