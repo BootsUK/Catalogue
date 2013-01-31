@@ -86,7 +86,17 @@ class User_model extends CI_Model{
 		}else{
 			return false;
 		}
+	}
 
+	public function admin_add_user($data){
+
+		$query = $this->db->insert('users', $data);
+
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public function update_password($data){
