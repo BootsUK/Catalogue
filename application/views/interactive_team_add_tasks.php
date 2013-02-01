@@ -66,7 +66,7 @@ echo "</li>";
 $this->db->where('role', 'developer');
 $dev = $this->db->get('users');
 
-print_r($dev->result_array());
+// print_r($dev->result_array());
 
 $old = array(
 	'None' => 'None',
