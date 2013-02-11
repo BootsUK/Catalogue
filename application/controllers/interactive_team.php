@@ -322,4 +322,36 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('footer');	
 	}
 
+	public function select_date_range(){
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+			$this->load->view('select_date_range_view');
+		}
+
+		$this->load->view('footer');
+	}
+
+	public function view_by_date_range(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$start_date = $this->input->post('start_date');
+			$end_date = $this->input->post('end_date');
+
+			$this->data['results'] = $this->interactive_team_model->search_by_range($start_date, $end_date);
+
+			$this->load->view('it_select_by_range', $this->data);
+
+		}else{
+			redirect('core/restricted');
+		}
+
+		$this->load->view('footer');
+	}
+
 }

@@ -1,0 +1,251 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0   3716  1800 ?        Ss   08:48   0:00 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    08:48   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    08:48   0:02 [ksoftirqd/0]
+root         6  0.0  0.0      0     0 ?        S    08:48   0:00 [migration/0]
+root         7  0.0  0.0      0     0 ?        S    08:48   0:00 [watchdog/0]
+root         8  0.0  0.0      0     0 ?        S    08:48   0:00 [migration/1]
+root        10  0.0  0.0      0     0 ?        S    08:48   0:02 [ksoftirqd/1]
+root        11  0.0  0.0      0     0 ?        S    08:48   0:00 [watchdog/1]
+root        12  0.0  0.0      0     0 ?        S<   08:48   0:00 [cpuset]
+root        13  0.0  0.0      0     0 ?        S<   08:48   0:00 [khelper]
+root        14  0.0  0.0      0     0 ?        S    08:48   0:00 [kdevtmpfs]
+root        15  0.0  0.0      0     0 ?        S<   08:48   0:00 [netns]
+root        17  0.0  0.0      0     0 ?        S    08:48   0:00 [sync_supers]
+root        18  0.0  0.0      0     0 ?        S    08:48   0:00 [bdi-default]
+root        19  0.0  0.0      0     0 ?        S<   08:48   0:00 [kintegrityd]
+root        20  0.0  0.0      0     0 ?        S<   08:48   0:00 [kblockd]
+root        21  0.0  0.0      0     0 ?        S<   08:48   0:00 [ata_sff]
+root        22  0.0  0.0      0     0 ?        S    08:48   0:00 [khubd]
+root        23  0.0  0.0      0     0 ?        S<   08:48   0:00 [md]
+root        26  0.0  0.0      0     0 ?        S    08:48   0:00 [khungtaskd]
+root        27  0.0  0.0      0     0 ?        S    08:48   0:02 [kswapd0]
+root        28  0.0  0.0      0     0 ?        SN   08:48   0:00 [ksmd]
+root        29  0.0  0.0      0     0 ?        SN   08:48   0:00 [khugepaged]
+root        30  0.0  0.0      0     0 ?        S    08:48   0:00 [fsnotify_mark]
+root        31  0.0  0.0      0     0 ?        S    08:48   0:00 [ecryptfs-kthrea]
+root        32  0.0  0.0      0     0 ?        S<   08:48   0:00 [crypto]
+root        41  0.0  0.0      0     0 ?        S<   08:48   0:00 [kthrotld]
+root        43  0.0  0.0      0     0 ?        S    08:48   0:00 [scsi_eh_0]
+root        44  0.0  0.0      0     0 ?        S    08:48   0:00 [scsi_eh_1]
+root        45  0.0  0.0      0     0 ?        S    08:48   0:00 [scsi_eh_2]
+root        46  0.0  0.0      0     0 ?        S    08:48   0:00 [scsi_eh_3]
+root        51  0.0  0.0      0     0 ?        S<   08:48   0:00 [binder]
+root        71  0.0  0.0      0     0 ?        S<   08:48   0:00 [deferwq]
+root        72  0.0  0.0      0     0 ?        S<   08:48   0:00 [charger_manager]
+root        73  0.0  0.0      0     0 ?        S<   08:48   0:00 [devfreq_wq]
+root       219  0.0  0.0      0     0 ?        S    08:48   0:02 [jbd2/sda2-8]
+root       220  0.0  0.0      0     0 ?        S<   08:48   0:00 [ext4-dio-unwrit]
+root       238  0.0  0.0      0     0 ?        S    08:48   0:02 [flush-8:0]
+root       309  0.0  0.0   2820   520 ?        S    08:48   0:00 upstart-udev-bridge --daemon
+root       311  0.0  0.0   3444   988 ?        Ss   08:48   0:00 /sbin/udevd --daemon
+root       464  0.0  0.0   3364   620 ?        S    08:48   0:00 /sbin/udevd --daemon
+root       466  0.0  0.0   3364   568 ?        S    08:48   0:00 /sbin/udevd --daemon
+root       582  0.0  0.0   2816   492 ?        S    08:48   0:00 upstart-socket-bridge --daemon
+root       655  0.0  0.0      0     0 ?        S<   08:48   0:00 [kpsmoused]
+root       658  0.0  0.0      0     0 ?        S<   08:48   0:00 [cfg80211]
+root       662  0.0  0.0      0     0 ?        S<   08:48   0:00 [kvm-irqfd-clean]
+root       688  0.0  0.0      0     0 ?        S<   08:48   0:00 [hd-audio0]
+root       762  0.0  0.0  22940  2520 ?        Ss   08:48   0:00 smbd -F
+102        785  0.0  0.0   4456  2016 ?        Ss   08:48   0:09 dbus-daemon --system --fork
+root       809  0.0  0.0  23456   612 ?        S    08:48   0:00 smbd -F
+root       821  0.0  0.0   7416  2064 ?        Ss   08:48   0:00 /usr/sbin/modem-manager
+root       822  0.0  0.0   4784  1192 ?        Ss   08:48   0:00 /usr/sbin/bluetoothd
+syslog     836  0.0  0.0  31072   976 ?        Sl   08:48   0:02 rsyslogd -c5
+root       842  0.0  0.1  33244  4528 ?        Ssl  08:48   0:06 NetworkManager
+avahi      847  0.0  0.0   3572  1340 ?        S    08:48   0:00 avahi-daemon: running [ewan-ThinkCentre-M58e.local]
+avahi      851  0.0  0.0   3448   212 ?        S    08:48   0:00 avahi-daemon: chroot helper
+root       866  0.0  0.0  27920  4048 ?        Sl   08:48   0:06 /usr/lib/policykit-1/polkitd --no-debug
+root       880  0.0  0.0   7420  2288 ?        Ss   08:48   0:00 /usr/sbin/cupsd -F
+root       938  0.0  0.0   4632   716 tty4     Ss+  08:48   0:00 /sbin/getty -8 38400 tty4
+root       946  0.0  0.0   4632   716 tty5     Ss+  08:48   0:00 /sbin/getty -8 38400 tty5
+root       950  0.0  0.0      0     0 ?        S<   08:48   0:00 [krfcommd]
+root       953  0.0  0.0   4632   716 tty2     Ss+  08:48   0:00 /sbin/getty -8 38400 tty2
+root       955  0.0  0.0   4632   716 tty3     Ss+  08:48   0:00 /sbin/getty -8 38400 tty3
+root       958  0.0  0.0   4632   716 tty6     Ss+  08:48   0:00 /sbin/getty -8 38400 tty6
+mongodb    979  0.2  0.0  91632  1756 ?        Ssl  08:48   1:23 /usr/bin/mongod --config /etc/mongodb.conf
+whoopsie   983  0.0  0.0  26136  3848 ?        Ssl  08:48   0:00 whoopsie
+root       985  0.0  0.0   2176   476 ?        Ss   08:48   0:00 acpid -c /etc/acpi/events -s /var/run/acpid.socket
+mysql      997  0.0  0.0 320024  1976 ?        Ssl  08:48   0:14 /usr/sbin/mysqld
+root      1029  0.0  0.0   2620   776 ?        Ss   08:48   0:00 cron
+daemon    1030  0.0  0.0   2476     8 ?        Ss   08:48   0:00 atd
+root      1045  0.0  0.0   6252  1792 ?        Ss   08:48   0:02 /sbin/wpa_supplicant -B -P /run/sendsigs.omit.d/wpasupplicant.pid -u -s -O /var/run/wpa_supplicant
+postgres  1052  0.0  0.1  50552  6396 ?        S    08:48   0:00 /usr/lib/postgresql/9.1/bin/postgres -D /var/lib/postgresql/9.1/main -c config_file=/etc/postgresql/9.1/main/postgresql.conf
+root      1054  0.0  0.7  34120 31076 ?        SLsl 08:48   0:00 lightdm
+root      1068  2.2  0.8  70468 34168 tty7     Ss+  08:48  10:55 /usr/bin/X :0 -core -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch -background none
+root      1085  0.0  0.0  24732  2948 ?        Sl   08:48   0:00 /usr/lib/accountsservice/accounts-daemon
+root      1103  0.0  0.0  30288  2620 ?        Sl   08:48   0:01 /usr/sbin/console-kit-daemon --no-daemon
+root      1247  0.0  0.0  28652  3136 ?        Sl   08:48   0:00 /usr/lib/upower/upowerd
+postgres  1251  0.0  0.0  50536   848 ?        Ss   08:48   0:02 postgres: writer process                                                                                                    
+postgres  1252  0.0  0.0  50536   376 ?        Ss   08:48   0:02 postgres: wal writer process                                                                                                
+postgres  1253  0.0  0.0  50952  1272 ?        Ss   08:48   0:00 postgres: autovacuum launcher process                                                                                       
+postgres  1254  0.0  0.0  20752   500 ?        Ss   08:48   0:00 postgres: stats collector process                                                                                           
+root      1393  0.0  0.0  25388  3224 ?        Sl   08:48   0:00 lightdm --session-child 12 21
+colord    1400  0.0  0.0  35508  3284 ?        Sl   08:48   0:00 /usr/lib/i386-linux-gnu/colord/colord
+rtkit     1466  0.0  0.0  21336  1024 ?        SNl  08:48   0:00 /usr/lib/rtkit/rtkit-daemon
+nobody    1507  0.0  0.0   5472  1220 ?        S    08:48   0:00 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/sendsigs.omit.d/network-manager.dnsmasq.pid --listen-address=127.0.1.1 --conf-file=/var/run/nm-dns-dnsmasq.conf --cache-size=0 --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+root      1696  0.0  0.0  13300  1268 ?        Ss   08:48   0:01 nmbd -D
+root      1730  0.0  0.0   2544   996 ?        S    08:48   0:06 /usr/sbin/and
+root      1776  0.0  0.0  39940  3048 ?        Ss   08:48   0:00 /usr/sbin/apache2 -k start
+www-data  1787  0.0  0.0  40928  3508 ?        S    08:48   0:00 /usr/sbin/apache2 -k start
+www-data  1788  0.0  0.0  40428  2944 ?        S    08:48   0:00 /usr/sbin/apache2 -k start
+www-data  1789  0.0  0.0  40672  3544 ?        S    08:48   0:00 /usr/sbin/apache2 -k start
+www-data  1790  0.0  0.0  40416  3412 ?        S    08:48   0:00 /usr/sbin/apache2 -k start
+www-data  1791  0.0  0.0  40928  3532 ?        S    08:48   0:00 /usr/sbin/apache2 -k start
+www-data  1808  0.0  0.0   5588   392 ?        S    08:48   0:00 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+www-data  1835  0.0  0.0  36528  2184 ?        Ss   08:48   0:00 /usr/bin/php-cgi
+www-data  1837  0.0  0.0  36528     4 ?        S    08:48   0:00 /usr/bin/php-cgi
+www-data  1838  0.0  0.0  36528     4 ?        S    08:48   0:00 /usr/bin/php-cgi
+www-data  1839  0.0  0.0  36528     4 ?        S    08:48   0:00 /usr/bin/php-cgi
+www-data  1840  0.0  0.0  36528     4 ?        S    08:48   0:00 /usr/bin/php-cgi
+root      1860  0.0  0.0   4632   716 tty1     Ss+  08:48   0:00 /sbin/getty -8 38400 tty1
+ewan      1939  0.0  0.1  90048  5640 ?        Sl   08:48   0:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+ewan      1950  0.0  0.1  51100  6828 ?        Ssl  08:48   0:00 gnome-session --session=ubuntu
+ewan      2064  0.0  0.0   4096    24 ?        Ss   08:48   0:00 /usr/bin/ssh-agent /usr/bin/dbus-launch --exit-with-session gnome-session --session=ubuntu
+ewan      2067  0.0  0.0   3844   312 ?        S    08:48   0:00 /usr/bin/dbus-launch --exit-with-session gnome-session --session=ubuntu
+ewan      2068  0.0  0.0   6288  2708 ?        Ss   08:48   0:07 //bin/dbus-daemon --fork --print-pid 6 --print-address 8 --session
+ewan      2070  0.0  0.0  43552  2684 ?        Sl   08:48   0:00 /usr/lib/at-spi2-core/at-spi-bus-launcher
+ewan      2074  0.0  0.0   3512  1400 ?        S    08:48   0:01 /bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+ewan      2077  0.0  0.0  17092  2860 ?        Sl   08:48   0:04 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+ewan      2086  0.0  0.2 204548 11584 ?        Sl   08:48   0:10 /usr/lib/gnome-settings-daemon/gnome-settings-daemon
+ewan      2097  0.0  0.0  52540  2812 ?        Sl   08:48   0:00 /usr/lib/gvfs/gvfsd
+ewan      2101  0.0  0.0  42764  2648 ?        Sl   08:48   0:00 /usr/lib/gvfs//gvfsd-fuse -f /run/user/ewan/gvfs
+ewan      2108  2.2  1.0 304460 42356 ?        SNl  08:49  10:55 compiz
+ewan      2118  0.0  0.0  99672  2980 ?        S<l  08:49   0:07 /usr/bin/pulseaudio --start --log-target=syslog
+ewan      2121  0.0  0.0  14220  1872 ?        S    08:49   0:00 /usr/lib/pulseaudio/pulse/gconf-helper
+ewan      2123  0.0  0.0   9516  2404 ?        S    08:49   0:00 /usr/lib/i386-linux-gnu/gconf/gconfd-2
+ewan      2127  0.0  0.0  33732  2428 ?        Sl   08:49   0:00 /usr/lib/dconf/dconf-service
+ewan      2159  0.0  0.1  58416  6396 ?        Sl   08:49   0:00 /usr/lib/gnome-settings-daemon/gnome-fallback-mount-helper
+ewan      2160  0.0  0.3 145164 13452 ?        Sl   08:49   0:02 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+ewan      2166  0.0  0.0  28548  3504 ?        Sl   08:49   0:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+ewan      2167  0.1  0.6 226864 27844 ?        Sl   08:49   0:29 nautilus -n
+ewan      2168  0.0  0.3 247108 13892 ?        Sl   08:49   0:13 nm-applet
+ewan      2169  0.0  0.1 142368  7852 ?        Sl   08:49   0:00 bluetooth-applet
+root      2178  0.0  0.0  42920  3320 ?        Sl   08:49   0:04 /usr/lib/udisks2/udisksd --no-debug
+ewan      2191  0.0  0.0  27508  2480 ?        Sl   08:49   0:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+ewan      2196  0.0  0.0  38840  2540 ?        Sl   08:49   0:01 /usr/lib/gvfs/gvfs-afc-volume-monitor
+ewan      2231  0.0  0.0  36568  2912 ?        Sl   08:49   0:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.7 /org/gtk/gvfs/exec_spaw/0
+ewan      2236  0.0  0.0  35908  2140 ?        Sl   08:49   0:00 /usr/lib/gvfs/gvfsd-burn --spawner :1.7 /org/gtk/gvfs/exec_spaw/1
+ewan      2244  0.0  0.2 141932  8872 ?        Sl   08:49   0:19 /usr/lib/bamf/bamfdaemon
+ewan      2258  0.0  0.0  17376  2532 ?        Sl   08:49   0:00 /usr/lib/gvfs/gvfsd-metadata
+ewan      2260  0.0  0.0   2232   472 ?        Ss   08:49   0:00 /bin/sh -c /usr/bin/gtk-window-decorator
+ewan      2261  0.0  0.3 135100 12384 ?        Sl   08:49   0:10 /usr/bin/gtk-window-decorator
+ewan      2270  0.1  0.9 176936 37592 ?        Sl   08:49   0:48 /usr/lib/unity/unity-panel-service
+ewan      2272  0.0  0.2  67872  9628 ?        Sl   08:49   0:20 /usr/lib/indicator-appmenu/hud-service
+ewan      2287  0.0  0.1  76176  5096 ?        Sl   08:49   0:00 /usr/lib/indicator-datetime/indicator-datetime-service
+ewan      2288  0.0  0.0  62448  3592 ?        Sl   08:49   0:02 /usr/lib/i386-linux-gnu/indicator-application-service
+ewan      2289  0.0  0.1 127864  4364 ?        Sl   08:49   0:00 /usr/lib/indicator-sound/indicator-sound-service
+ewan      2292  0.0  0.1  61988  7068 ?        Sl   08:49   0:00 /usr/lib/indicator-printers/indicator-printers-service
+ewan      2293  0.0  0.0  64828  3692 ?        Sl   08:49   0:00 /usr/lib/indicator-session/indicator-session-service
+ewan      2294  0.0  0.0  64452  3140 ?        Sl   08:49   0:00 /usr/lib/indicator-messages/indicator-messages-service
+ewan      2318  0.0  0.0  73536  3344 ?        Sl   08:49   0:00 /usr/lib/evolution/evolution-source-registry
+ewan      2339  0.0  0.1 108568  4300 ?        Sl   08:49   0:00 /usr/lib/gnome-online-accounts/goa-daemon
+ewan      2341  0.0  0.1  30752  4152 ?        Sl   08:49   0:01 /usr/lib/geoclue/geoclue-master
+ewan      2357  0.0  0.1  40592  4732 ?        Sl   08:49   0:01 /usr/lib/ubuntu-geoip/ubuntu-geoip-provider
+ewan      2361  0.0  0.1  76036  7688 ?        Sl   08:49   0:00 telepathy-indicator
+ewan      2362  0.0  0.1  50432  6932 ?        Sl   08:49   0:00 /usr/lib/gnome-user-share/gnome-user-share
+ewan      2370  0.0  0.1  43604  5736 ?        Sl   08:49   0:01 /usr/lib/telepathy/mission-control-5
+ewan      2378  0.0  0.3 111920 12624 ?        Sl   08:49   0:00 /usr/bin/signon-ui
+ewan      2381  0.0  0.1  54764  5756 ?        Sl   08:49   0:11 zeitgeist-datahub
+ewan      2387  0.0  0.1  44944  5192 ?        Sl   08:49   0:00 /usr/bin/zeitgeist-daemon
+ewan      2393  0.0  0.3  62552 15936 ?        Sl   08:49   0:00 /usr/lib/zeitgeist/zeitgeist-fts
+ewan      2401  0.0  0.0   4228   256 ?        S    08:49   0:00 /bin/cat
+ewan      2427  0.0  0.1  91476  6288 ?        Sl   08:49   0:00 /usr/lib/unity-lens-applications/unity-applications-daemon
+ewan      2429  0.0  0.1  85768  5164 ?        Sl   08:49   0:00 /usr/lib/unity-lens-files/unity-files-daemon
+ewan      2431  0.0  0.1  71772  4832 ?        Sl   08:49   0:00 /usr/lib/gwibber/unity-gwibber-daemon
+ewan      2433  0.0  0.1  77964  4552 ?        Sl   08:49   0:00 /usr/lib/i386-linux-gnu/unity-music-daemon
+ewan      2435  0.0  0.3  97056 15664 ?        Sl   08:49   0:00 /usr/bin/python3 /usr/lib/unity-lens-photos/unity-lens-photos
+ewan      2437  0.0  0.1  91712  6804 ?        Sl   08:49   0:00 /usr/lib/i386-linux-gnu/unity-shopping-daemon
+ewan      2439  0.0  0.2  85432 10352 ?        Sl   08:49   0:00 /usr/bin/python /usr/lib/unity-lens-video/unity-lens-video
+ewan      2503  0.0  0.0  84648  3440 ?        Sl   08:49   0:00 /usr/lib/i386-linux-gnu/unity-musicstore-daemon
+ewan      2505  0.0  0.2  91084 11516 ?        Sl   08:49   0:00 /usr/bin/python3 /usr/lib/unity-lens-files/unity-scope-gdocs
+ewan      2521  0.0  0.6  95320 25960 ?        Sl   08:49   0:02 /usr/bin/python /usr/lib/ubuntuone-client/ubuntuone-syncdaemon
+ewan      2523  0.0  0.2 100020 11620 ?        Sl   08:49   0:00 /usr/bin/python /usr/lib/unity-scope-video-remote/unity-scope-video-remote
+ewan      2543  0.0  0.0  34700  2664 ?        Sl   08:49   0:00 /usr/lib/libunity-webapps/unity-webapps-service
+ewan      2630  0.0  0.3 143872 12556 ?        Sl   08:50   0:01 update-notifier
+ewan      2709  0.0  0.0  36592  3256 ?        Sl   08:51   0:00 /usr/lib/i386-linux-gnu/deja-dup/deja-dup-monitor
+ewan      2717  2.5  4.0 597588 165912 ?       SNLl 08:51  12:04 chromium-browser                          
+ewan      2721  0.0  0.1 106828  5068 ?        S    08:51   0:04 chromium-browser                          
+ewan      2722  0.0  0.0   2256   320 ?        S    08:51   0:00 /usr/lib/chromium-browser/chromium-browser-sandbox /usr/lib/chromium-browser/chromium-browser --type=zygote
+ewan      2723  0.0  0.1 115236  7444 ?        S    08:51   0:00 chromium-browser --type=zygote                          
+ewan      2727  0.0  0.0 131628  3936 ?        S    08:51   0:00 chromium-browser --type=zygote                          
+ewan      2760  0.0  0.7 170244 31112 ?        Sl   08:51   0:02 /usr/lib/chromium-browser/chro                          
+ewan      2767  0.0  0.7 173160 31848 ?        Sl   08:51   0:02 /usr/lib/chromium-browser/chro                          
+ewan      2771  0.0  0.6 167020 26788 ?        Sl   08:51   0:15 /usr/lib/chromium-browser/chro                          
+ewan      2777  0.0  0.5 165996 24396 ?        Sl   08:51   0:00 /usr/lib/chromium-browser/chro                          
+ewan      2785  0.2  1.5 208672 63224 ?        Sl   08:51   1:01 /usr/lib/chromium-browser/chro                          
+ewan      2792  0.0  0.5 163948 22140 ?        Sl   08:51   0:00 /usr/lib/chromium-browser/chro                          
+ewan      2798  0.0  0.6 170244 26976 ?        Sl   08:51   0:00 /usr/lib/chromium-browser/chro                          
+ewan      2807  0.0  0.7 167496 29368 ?        Sl   08:51   0:01 /usr/lib/chromium-browser/chro                          
+ewan      2815  0.0  0.9 175364 37200 ?        Sl   08:51   0:21 /usr/lib/chromium-browser/chro                          
+ewan      2822  0.0  0.7 170092 30416 ?        Sl   08:51   0:04 /usr/lib/chromium-browser/chro                          
+ewan      2831  0.0  0.7 171116 31712 ?        Sl   08:51   0:06 /usr/lib/chromium-browser/chro                          
+ewan      2931  0.8  6.6 503512 273928 ?       SNl  08:51   4:11 /usr/lib/chromium-browser/chro                          
+ewan      3067  0.0  0.0      0     0 ?        Z    08:52   0:00 [chromium-browse] <defunct>
+ewan      3168  0.2  3.3 291344 137068 ?       Sl   09:02   0:57 /usr/lib/chromium-browser/chro                          
+ewan      3262  0.7  0.9 287428 36872 ?        SNl  09:02   3:16 chromium-browser --type=plugin --plugin-path=/usr/lib/adobe-flashplugin/libflashplayer.so --lang=en-GB --channel=2717.28.14628267
+ewan      6464  0.0  0.3 135000 12584 ?        Sl   09:07   0:03 /usr/lib/notify-osd/notify-osd
+ewan      6468  0.0  0.2  42116  8912 ?        Sl   09:07   0:03 /usr/bin/gnome-screensaver --no-daemon
+root      6757  0.1  0.0      0     0 ?        S    09:09   0:29 [kworker/u:1]
+root      7076  0.0  0.1  17872  7972 ?        S    09:12   0:00 /usr/bin/python /usr/lib/system-service/system-service-d
+root      7249  0.0  0.0  13168  2376 ?        S    09:25   0:00 sudo git clone https://github.com/rapid7/metasploit-framework.git
+root      7250  0.0  0.0   6376  1304 ?        S    09:25   0:00 git clone https://github.com/rapid7/metasploit-framework.git
+root      7251  0.0  0.1  23600  6232 ?        S    09:25   0:00 git-remote-https origin https://github.com/rapid7/metasploit-framework.git
+root      7253  0.0  0.0   6632  1252 ?        S    09:25   0:00 git fetch-pack --stateless-rpc --stdin --lock-pack --thin https://github.com/rapid7/metasploit-framework.git/
+ewan     12021  0.0  0.1 124792  5552 ?        Sl   09:46   0:00 /usr/lib/gvfs/gvfsd-http --spawner :1.7 /org/gtk/gvfs/exec_spaw/2
+postgres 12399  0.0  0.1  41448  5724 ?        S    09:50   0:00 /opt/metasploit/postgresql/bin/postgres.bin
+postgres 12406  0.0  0.2  41580 10288 ?        Ss   09:50   0:02 postgres: writer process                   
+postgres 12407  0.0  0.0  41448  1864 ?        Ss   09:50   0:01 postgres: wal writer process               
+postgres 12408  0.0  0.0  42044  2224 ?        Ss   09:50   0:00 postgres: autovacuum launcher process      
+postgres 12409  0.0  0.0  11788  1152 ?        Ss   09:50   0:03 postgres: stats collector process          
+daemon   12511  0.1  1.9  91228 78768 ?        Sl   09:51   0:34 thin server (127.0.0.1:3001)                                                                                                                
+root     12533  1.9  4.3 199700 176676 ?       Sl   09:51   8:07 prosvc                                                                  
+root     12665  0.0  0.0   4784   532 ?        Ss   09:52   0:00 nginx: master process /opt/metasploit/apps/pro/engine/arch-lib/linux32/nginx/bin/nginx -c /opt/metasploit/apps/pro/nginx/conf/nginx.conf
+daemon   12666  0.0  0.0   5116  1260 ?        S    09:52   0:01 nginx: worker process                                                                                             
+daemon   12667  0.0  0.0   4928   816 ?        S    09:52   0:01 nginx: worker process                                                                                             
+daemon   12668  0.0  0.0   4928   816 ?        S    09:52   0:01 nginx: worker process                                                                                             
+daemon   12669  0.0  0.0   5116  1268 ?        S    09:52   0:00 nginx: worker process                                                                                             
+postgres 12853  0.2  0.3  43516 15712 ?        Ss   09:53   1:05 postgres: msf3 msf3 127.0.0.1(40866) idle  
+postgres 12855  0.0  0.1  42492  6588 ?        Ss   09:53   0:00 postgres: msf3 msf3 127.0.0.1(40872) idle  
+postgres 12856  0.0  0.1  43040  7468 ?        Ss   09:53   0:00 postgres: msf3 msf3 127.0.0.1(40873) idle  
+postgres 12862  0.0  0.1  42464  6408 ?        Ss   09:53   0:00 postgres: msf3 msf3 127.0.0.1(40876) idle  
+postgres 13037  0.0  0.2  43612  8492 ?        Ss   09:56   0:00 postgres: msf3 msf3 127.0.0.1(40986) idle  
+ewan     13045  0.1  1.5 200600 61664 ?        Sl   09:56   0:27 /usr/lib/chromium-browser/chro                          
+www-data 13576  0.0  0.0  40180  1944 ?        S    10:42   0:00 /usr/sbin/apache2 -k start
+ewan     15624  0.1  0.5 220664 20912 ?        SNl  11:28   0:25 filezilla
+ewan     15636  0.0  0.0   5184   676 ?        SN   11:28   0:00 /bin/bash /usr/bin/sublime-text-2
+ewan     15639  1.2  1.7 524408 70804 ?        SNl  11:28   3:57 /usr/lib/sublime-text-2/sublime_text --class=sublime-text-2
+root     15748  0.1  0.0      0     0 ?        S    11:29   0:19 [kworker/u:3]
+root     16360  0.0  0.0  14936  2512 ?        S    11:40   0:00 sudo msfconsole
+root     16361  0.3  2.3 117900 97420 ?        Sl   11:40   1:06 /opt/metasploit/ruby/bin/.ruby.bin /opt/metasploit/apps/pro/msf3/msfconsole
+postgres 16384  0.0  0.2  42564  8396 ?        Ss   11:41   0:00 postgres: msf3 msf3 127.0.0.1(43708) idle  
+postgres 16385  0.0  0.2  42476  8332 ?        Ss   11:41   0:17 postgres: msf3 msf3 127.0.0.1(43709) idle  
+postgres 16388  0.0  0.1  42444  5392 ?        Ss   11:41   0:00 postgres: msf3 msf3 127.0.0.1(43710) idle  
+ewan     18182  0.0  1.1 189164 46600 ?        Sl   13:02   0:03 /usr/lib/chromium-browser/chro                          
+ewan     18531  0.0  1.5 212548 63300 ?        Sl   13:09   0:03 /usr/lib/chromium-browser/chro                          
+www-data 18745  0.0  0.0  40492  3420 ?        S    13:18   0:00 /usr/sbin/apache2 -k start
+ewan     19141  2.1  3.4 707780 143176 ?       SNl  13:48   3:47 /usr/lib/firefox/firefox
+ewan     19184  0.9 11.0 1288484 453732 ?      SNl  13:49   1:42 /usr/lib/jvm/jre1.6.0_37/bin/java -Xbootclasspath/a:/usr/lib/jvm/jre1.6.0_37/lib/javaws.jar:/usr/lib/jvm/jre1.6.0_37/lib/deploy.jar:/usr/lib/jvm/jre1.6.0_37/lib/plugin.jar -classpath /usr/lib/jvm/jre1.6.0_37/lib/deploy.jar -Djava.security.policy=file:/usr/lib/jvm/jre1.6.0_37/lib/security/javaws.policy -DtrustProxy=true -Xverify:remote -Djnlpx.home=/usr/lib/jvm/jre1.6.0_37/bin -Dsun.awt.warmup=true -Djnlpx.origFilenameArg=/tmp/CMSAdminGui.jnlp -Djnlpx.remove=true -Xnoclassgc -Djnlpx.splashport=55877 -Djnlpx.jvm=/usr/lib/jvm/jre1.6.0_37/bin/java -Djnlpx.vmargs=-Xnoclassgc com.sun.javaws.Main /tmp/javawFW8EBx
+ewan     19241  0.4  2.7 278320 112460 ?       Sl   13:50   0:42 /usr/lib/chromium-browser/chro                          
+root     19964  0.0  0.0   5492  2712 ?        S    14:50   0:00 /sbin/dhclient -d -4 -sf /usr/lib/NetworkManager/nm-dhcp-client.action -pf /var/run/sendsigs.omit.d/network-manager.dhclient-wlan0.pid -lf /var/lib/dhcp/dhclient-4faad937-c1d0-4f9d-ae2e-dfc54f5082f1-wlan0.lease -cf /var/run/nm-dhclient-wlan0.conf wlan0
+ewan     20100  0.0  0.3 153944 13972 ?        SNl  14:51   0:01 gnome-terminal
+ewan     20107  0.0  0.0   2404   716 ?        SN   14:51   0:00 gnome-pty-helper
+ewan     20108  0.0  0.1   9264  5572 pts/3    SNs  14:51   0:00 -bash
+ewan     20599  0.0  0.5 486832 23784 ?        SNl  14:58   0:04 gnome-control-center --overview
+root     20625  0.0  0.0   5492  2640 ?        S    15:01   0:00 /sbin/dhclient -d -4 -sf /usr/lib/NetworkManager/nm-dhcp-client.action -pf /var/run/sendsigs.omit.d/network-manager.dhclient-eth0.pid -lf /var/lib/dhcp/dhclient-09ef3e1c-c535-42da-aef5-f272c0effbc2-eth0.lease -cf /var/run/nm-dhclient-eth0.conf eth0
+ewan     20749  0.1  3.6 268460 147692 ?       Sl   15:01   0:07 /usr/lib/chromium-browser/chro                          
+ewan     20763  0.3  2.9 291124 121656 ?       Sl   15:01   0:18 /usr/lib/chromium-browser/chro                          
+root     20927  0.1  0.0      0     0 ?        S    15:15   0:05 [kworker/u:0]
+ewan     20943  2.9  4.6 352288 191820 ?       SNl  15:17   2:35 /usr/lib/chromium-browser/chro                          
+ewan     21137  0.4  3.4 283676 140928 ?       Sl   15:33   0:20 /usr/lib/chromium-browser/chro                          
+ewan     21179  0.1  1.2 191340 50000 ?        Sl   15:34   0:05 /usr/lib/chromium-browser/chro                          
+ewan     21239  0.0  1.4 201856 58376 ?        Sl   15:37   0:03 /usr/lib/chromium-browser/chro                          
+root     21960  0.0  0.0      0     0 ?        S    16:17   0:01 [kworker/1:1]
+root     21997  0.0  0.0      0     0 ?        S    16:25   0:00 [kworker/0:0]
+root     22091  0.0  0.0      0     0 ?        S    16:32   0:00 [kworker/1:0]
+root     22125  0.0  0.0      0     0 ?        S    16:35   0:00 [kworker/0:1]
+root     22184  0.0  0.0      0     0 ?        S    16:40   0:00 [kworker/0:2]
+root     22193  0.0  0.0      0     0 ?        S    16:42   0:00 [kworker/1:2]
+ewan     22211 10.2  1.7 213284 71196 ?        Sl   16:44   0:01 /usr/lib/chromium-browser/chro                          
+ewan     22231  0.0  0.0   5220  1208 pts/3    RN+  16:44   0:00 ps aux
+ewan     22232  0.0  0.1   9264  4212 pts/3    DN+  16:44   0:00 -bash
