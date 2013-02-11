@@ -147,14 +147,23 @@ class Interactive_team_model extends CI_Model{
 		}
 	}
 
-	public function search_by_range($start_date, $end_date){
+	public function search_by_range($range){
 
-		$query = $this->db->query("SELECT * FROM it_complete_tasks WHERE t_c_comp BETWEEN $start_date AND $end_date");
+		$start_date = $range['start_date'];
+		$end_date = $range['end_date'];
+
+		$query = $this->db->query("SELECT *
+FROM it_complete_tasks
+WHERE t_c_comp
+BETWEEN '$start_date'
+AND '$end_date'
+LIMIT 0 , 30");
 
 		if($query->num_rows() > 0){
 			return $query->result_array();
 		}else{
 			return false;
+			echo "Model failure";
 		}
 	}
 }

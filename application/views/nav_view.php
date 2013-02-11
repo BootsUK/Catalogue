@@ -16,6 +16,7 @@
                             <li><a href="http://evdatacenter.co.uk/boots/interactive_team/">Interactive team</a>
                                 <ul>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/display_tasks">View tasks</a></li>
+                                    <li><a href="http://evdatacenter.co.uk/boots/interactive_team/select_date_range">Date range</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/add_tasks">Add tasks</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/search_tasks">Search tasks</a></li>
                                     <li><a href="http://evdatacenter.co.uk/boots/interactive_team/priority_scale">Priority scale</a></li>
@@ -31,7 +32,7 @@
                         </li>
                         <li><a href="http://evdatacenter.co.uk/boots/blog/">Blog</a>
                             <ul>
-                                <li><a href="http://evdatacenter.co.uk/boots/blog/latest/">View latest posts</a></li>
+                                <li><a href="http://evdatacenter.co.uk/boots/blog/latest/">View posts</a></li>
                                 <li><a href="http://evdatacenter.co.uk/boots/blog/insert_post_form/">Insert new post</a></li>
                             </ul>
                         </li>

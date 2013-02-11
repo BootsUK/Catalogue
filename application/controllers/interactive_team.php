@@ -343,9 +343,15 @@ class Interactive_team extends CI_Controller{
 			$start_date = $this->input->post('start_date');
 			$end_date = $this->input->post('end_date');
 
-			$this->data['results'] = $this->interactive_team_model->search_by_range($start_date, $end_date);
+			$range = array(
+				'start_date' => $this->input->post('start_date'),
+				'end_date' => $this->input->post('end_date')
+				);
 
-			$this->load->view('it_select_by_range', $this->data);
+			$this->data['results'] = $this->interactive_team_model->search_by_range($range);
+
+			$this->load->view('search_by_range_view', $this->data);
+
 
 		}else{
 			redirect('core/restricted');

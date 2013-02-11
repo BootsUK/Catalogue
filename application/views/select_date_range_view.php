@@ -8,7 +8,8 @@ echo "<li>Enter end date: <br />";
 echo form_input('end_date', '', 'class="datepicker"');
 echo "</li>";
 
-
 ?>
+
+<input type="submit" name="submit" value="Submit">
 
 </form>
