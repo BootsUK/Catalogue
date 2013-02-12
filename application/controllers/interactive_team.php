@@ -360,4 +360,16 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('footer');
 	}
 
+	public function generate_xml(){
+
+		if($this->session->userdata('is_logged_in')){
+			$this->data['results'] = $this->interactive_team_model->view_tasks();
+			$this->load->view('it_tasks_xml_feed', $this->data);
+		}else{
+			redirect('core/restricted');
+		}
+
+		
+	}
+
 }
