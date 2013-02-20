@@ -172,7 +172,7 @@ class Interactive_team_model extends CI_Model{
 		}
 	}
 
-	public function save_bootsify(){
+	public function save_bootsify($data){
 
 		$query = $this->db->insert('bootsify', $data);
 
@@ -187,7 +187,6 @@ class Interactive_team_model extends CI_Model{
 
 		$this->db->like('title', $search);
 		$query = $this->db->get('bootsify');
-
 
 		if($query->num_rows() > 0){
 			return $query->result_array();

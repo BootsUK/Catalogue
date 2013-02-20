@@ -360,6 +360,7 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('footer');
 	}
 
+
 	public function generate_xml(){
 
 		if($this->session->userdata('is_logged_in')){
@@ -378,6 +379,8 @@ class Interactive_team extends CI_Controller{
 
 		if($this->session->userdata('is_logged_in')){
 			$this->load->view('add_bootsify_view');
+		}else{
+			redirect('core/restricted');
 		}
 
 		$this->load->view('footer');
@@ -385,20 +388,34 @@ class Interactive_team extends CI_Controller{
 
 
 	public function bootsify(){
+
 		if($this->session->userdata('is_logged_in')){
 
 			$data = array(
 				'title' => $this->input->post('title'),
 				'teaser' => $this->input->post('teaser'),
 				'body' => $this->input->post('body'),
-				'user' = $this->session->userdata('email')
+				'user' => $this->session->userdata('email')
 				);
 
-			$data['results'] = $this->interactive_team_model->save_bootsify($data);
+			$this->interactive_team_model->save_bootsify($data);
 			$this->load->view('bootsify_view', $data);
+
 		}else{
 			redirect('core/restricted');
 		}
+	}
+
+	public function bootsify_search_load(){
+
+		$this->load->view('header');
+		
+		if($this->session->userdata('is_logged_in')){
+
+			$this->load->view('search_bootsify_view');
+		}
+
+		$this->load->view('footer');
 	}
 
 	public function bootsify_search(){
@@ -407,17 +424,25 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('nav_view');
 
 		if($this->session->userdata('is_logged_in')){
-
 			$search = $this->input->post('search');
+			$data['results'] = $this->interactive_team_model->search_bootsify($search);
 
-			$this->interactive_team_model->search_bootsify($search);
-
-			$this->load->view('search_bootsify_view');
+			$this->load->view('bootsify_result_view', $data);
 		}else{
 			redirect('core/restricted');
 		}
 
 		$this->load->view('footer');
 
+	}
+
+	public function get_bootsify_by_id(){
+
+		if($this->session->userdata('is_logged_in')){
+			$id = $this->uri->segment(3);
+			$data['results'] = $this->interactive_team_model->get_bootsidy_by_id($id);
+
+			$this->load->view('bootsify_view');
+		}
 	}
 }
