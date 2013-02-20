@@ -363,13 +363,61 @@ class Interactive_team extends CI_Controller{
 	public function generate_xml(){
 
 		if($this->session->userdata('is_logged_in')){
-			$this->data['results'] = $this->interactive_team_model->view_tasks();
+			$this->data['results'] = $this->interactive_team_model->xml_feed();
 			$this->load->view('it_tasks_xml_feed', $this->data);
+
+		}else{
+			redirect('core/restricted');
+		}
+		
+	}
+
+	public function bootsify_add(){
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+			$this->load->view('add_bootsify_view');
+		}
+
+		$this->load->view('footer');
+	}
+
+
+	public function bootsify(){
+		if($this->session->userdata('is_logged_in')){
+
+			$data = array(
+				'title' => $this->input->post('title'),
+				'teaser' => $this->input->post('teaser'),
+				'body' => $this->input->post('body'),
+				'user' = $this->session->userdata('email')
+				);
+
+			$data['results'] = $this->interactive_team_model->save_bootsify($data);
+			$this->load->view('bootsify_view', $data);
+		}else{
+			redirect('core/restricted');
+		}
+	}
+
+	public function bootsify_search(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$search = $this->input->post('search');
+
+			$this->interactive_team_model->search_bootsify($search);
+
+			$this->load->view('search_bootsify_view');
 		}else{
 			redirect('core/restricted');
 		}
 
-		
-	}
+		$this->load->view('footer');
 
+	}
 }
