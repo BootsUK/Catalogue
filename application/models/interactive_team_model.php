@@ -194,4 +194,16 @@ class Interactive_team_model extends CI_Model{
 			return false;
 		}
 	}
+
+	public function get_bootsify_by_id($id){
+
+		$this->db->where('id', $id);
+		$query = $this->db->get('bootsify');
+
+		if($query->num_rows() > 0){
+			return $query->result_array();
+		}else{
+			return false;
+		}
+	}
 }

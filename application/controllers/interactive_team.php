@@ -439,10 +439,11 @@ class Interactive_team extends CI_Controller{
 	public function get_bootsify_by_id(){
 
 		if($this->session->userdata('is_logged_in')){
-			$id = $this->uri->segment(3);
-			$data['results'] = $this->interactive_team_model->get_bootsidy_by_id($id);
 
-			$this->load->view('bootsify_view');
+			$id = $this->uri->segment(3);
+			$data['results'] = $this->interactive_team_model->get_bootsify_by_id($id);
+
+			$this->load->view('bootsify_database_view', $data);
 		}
 	}
 }

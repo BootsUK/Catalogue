@@ -486,12 +486,24 @@ div.contentHeader p, div.titleAreaBMJ div.container h2, div.titleArea div.contai
           <hr /> 
 
           <h2>
-          	<?php echo $title; ?>
+          	<?php 
+
+          	foreach($results as $row){
+          		echo $row['title'];
+          	}
+
+          	?>
           </h2>	
           <div class="teaser-text">
            <p class="teaser-text">
-             <?php echo $teaser; ?>
-           </p>	
+            <?php
+
+            foreach($results as $row){
+          		echo $row['teaser'];
+          	}
+
+            ?>
+     	    </p>	
           </div>	
          </div>	
         </div>
@@ -524,7 +536,13 @@ div.contentHeader p, div.titleAreaBMJ div.container h2, div.titleArea div.contai
 
 
 
-<?php echo $body; ?>
+<?php
+
+foreach($results as $row){
+	echo $row['body'];
+}
+
+?>
 
 
 <!-- LITTLE SCRIPT OF FUCK OFF HEADING AND TEASER
@@ -539,10 +557,6 @@ $('div.teaser-text').hide();
 <!-- HERE PUT YOUR SODDING CODE HERE. -->
 
 
-
-
-
-     
     </div>
    </div>
   </div>

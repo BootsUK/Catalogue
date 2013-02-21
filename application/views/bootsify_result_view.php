@@ -4,7 +4,7 @@
 <?php 
 
 foreach($results as $row){
-	echo "<p><a href='".base_url()."get_bootsify_by_id/".$row['id']."'>".$row['title']."</a>";
+	echo "<p><a href='".base_url()."interactive_team/get_bootsify_by_id/".$row['id']."'>".$row['title']."</a>";
 }
 
 ?>
