@@ -1,10 +1,12 @@
 <h3>Results</h3>
 
 
-<?php 
+<?php
 
 foreach($results as $row){
-	echo "<p><a href='".base_url()."interactive_team/get_bootsify_by_id/".$row['id']."'>".$row['title']."</a>";
+	echo "<p><a href='".base_url()."interactive_team/get_bootsify_by_id/".$row['id']."'>".$row['title']."</a><br />";
+	echo "<p><a href='".base_url()."interactive_team/delete_bootsify_by_id/".$row['id']."'>Delete </a>";
+	echo "<p><a href='".base_url()."interactive_team/edit_bootsify_by_id_form/".$row['id']."'>Edit</a>";
 }
 
 ?>
