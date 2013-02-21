@@ -11,6 +11,16 @@
 		echo form_input('teaser', $row['teaser']);
 		echo "<br />"
 
+		$options = array(
+			'100' => '100% 946px',
+			'75' => '75% 744px',
+			'50' => '50% 550px'
+			);
+
+		echo "<label>Template</label><br />";
+		echo form_dropdown('template', $options);
+		echo "<br />";
+
 		echo "<label>Body</label><br />";
 		echo form_textarea('body', $row['body']);
 		echo "<br />";

@@ -394,6 +394,7 @@ class Interactive_team extends CI_Controller{
 			$data = array(
 				'title' => $this->input->post('title'),
 				'teaser' => $this->input->post('teaser'),
+				'template' => $this->input->post('template'),
 				'body' => $this->input->post('body'),
 				'user' => $this->session->userdata('email')
 				);
@@ -495,7 +496,7 @@ class Interactive_team extends CI_Controller{
 				'title' => $this->input->post('title'),
 				'teaser' => $this->input->post('teaser'),
 				'body' => $this->input->post('body'),
-				''
+				'template' = $this->input->post('template')
 				);
 
 			if($this->interactive_team_model->update_bootsify_by_id($data)){

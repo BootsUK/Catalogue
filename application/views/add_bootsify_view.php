@@ -14,6 +14,14 @@
 
 	<br>
 
+	<select name="template" id="template">
+		<option value="100">100% 964px</option>
+		<option value="75">75% 744px</option>
+		<option value="50">50% 550px</option>
+	</select>
+
+	<br>
+
 	<label for="body">Body content</label><br />
 	<textarea name="body" id="body" cols="30" rows="10">
 		
