@@ -1,4 +1,4 @@
-<h3>Completed bugs</h3>
+<h3>Bug Control home</h3>
 
 <table class="sortable">
 	<thead>

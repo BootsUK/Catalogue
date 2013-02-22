@@ -36,6 +36,14 @@
                                 <li><a href="http://evdatacenter.co.uk/boots/blog/insert_post_form/">Insert new post</a></li>
                             </ul>
                         </li>
+
+                        <li><a href="http://evdatacenter.co.uk/boots/bug_control/">INT/ROI</a>
+                            <ul>
+                                <li><a href="http://evdatacenter.co.uk/boots/bug_control/display_complete">Display complete</a></li>
+                                <li><a href="http://evdatacenter.co.uk/boots/bug_control/display_outstanding">Display outstanding</a></li>
+                                <li><a href="http://evdatacenter.co.uk/boots/bug_control/search_bugs">Search bugs</a></li>
+                            </ul>
+                        </li>
                 </ul>
 
 </div>

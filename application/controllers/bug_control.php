@@ -15,7 +15,6 @@ class Bug_control extends CI_Controller{
 		$this->load->library('form_validation');
 		$this->load->model('bug_control_model');
 		$this->load->helper('date');
-		$datestring = "%d/%m/%Y";
 	}
 
 	/* Home */
@@ -25,11 +24,12 @@ class Bug_control extends CI_Controller{
 		$this->load->view('header');
 		$this->load->view('nav_view');
 
-		if($this->userdata->session('is_logged_in')){
+		if($this->session->userdata('is_logged_in')){
 
-			$this->data['results'] = $this->bug_control_model->get_oustanding();
+			$this->data['results'] = $this->bug_control_model->get_outstanding();
 
 			$this->load->view('bug_control_home_view', $this->data);
+
 		}else{
 			redirect('core/restricted');
 		}
@@ -89,7 +89,12 @@ class Bug_control extends CI_Controller{
 		$this->load->view('nav_view');
 
 		if($this->session->userdata('is_logged_in')){
-			$this->load->view('edit_bug_view');
+
+			$id = $this->uri->segment(3);
+
+			$this->data['results'] = $this->bug_control_model->display_bug_by_id($id);
+
+			$this->load->view('update_bug_view', $this->data);
 		}else{
 			redirect('core/restricted');
 		}
@@ -104,17 +109,20 @@ class Bug_control extends CI_Controller{
 
 		if($this->session->userdata('is_logged_in')){
 
-			$this->form_validation->set_rules('bug_title', 'Bug title', 'required|trim|min_length[3]|max_length[255]');
-			$this->form_validation->set_rules('bug_page_title', 'Bug page title', 'required|trim|min_length[3]|max_length[255]');
-			$this->form_validation->set_rules('bug_cms_id', 'Bug CMS ID', 'integer|min_length[1]|max_length[20]');
-			$this->form_validation->set_rules('bug_region', 'Bug region', 'required|min_length[2]|max_length[4]');
-			$this->form_validation->set_rules('bug_description', 'Bug description', 'required|min_length[5]|max_length[555]');
-			$this->form_validation->set_rules('bug_status', 'Bug status', 'required|min_length[2]|max_length[255]');
-			$this->form_validation->set_rules('bug_priority', 'Bug priority', 'required|min_length[2]|max_length[12]');
+			$this->form_validation->set_rules('bug_title', 'Bug title', 'required|max_length[255]');
+			$this->form_validation->set_rules('bug_page_title', 'Bug page title', 'required|max_length[255]');
+			$this->form_validation->set_rules('bug_cms_id', 'Bug CMS ID', 'integer|max_length[20]');
+			$this->form_validation->set_rules('bug_region', 'Bug region', 'required|max_length[125]');
+			$this->form_validation->set_rules('bug_description', 'Bug description', 'required|max_length[555]');
+			$this->form_validation->set_rules('bug_status', 'Bug status', 'required|max_length[255]');
+			$this->form_validation->set_rules('bug_priority', 'Bug priority', 'required|max_length[12]');
+			$this->form_validation->set_rules('bug_developer', 'Bug developers', 'required|max_length[125]');
+			$this->form_validation->set_rules('bug_is_complete', 'Bug is complete?', 'required');
 
 			if($this->form_validation->run()){
 
 				$time = time();
+				$datestring = "%d/%m/%Y";
 
 				$data = array(
 					'bug_title' => $this->input->post('bug_title'),
@@ -124,14 +132,22 @@ class Bug_control extends CI_Controller{
 					'bug_description' => $this->input->post('bug_description'),
 					'bug_status' => $this->input->post('bug_status'),
 					'bug_priority' => $this->input->post('bug_priority'),
+					'bug_developer' => $this->input->post('bug_developer'),
 					'bug_reported_by' => $this->session->userdata('email'),
-					'bug_reported_data' => mdate($datestring, $time),
+					'bug_reported_date' => mdate($datestring, $time),
 					'bug_last_modified' => mdate($datestring, $time)
 					);
 
 				/* End of data array */
 
 				$add_bug = $this->bug_control_model->add_bug($data);
+
+				if($add_bug){
+					redirect('bug_control/');
+				}else{
+					echo "Bug addition failed";
+				}
+
 			}else{
 				echo "<p>Form validation failed</p>";
 			}
@@ -167,9 +183,21 @@ class Bug_control extends CI_Controller{
 
 		if($this->session->userdata('is_logged_in')){
 
+			$this->form_validation->set_rules('bug_title', 'Bug title', 'required|max_length[255]');
+			$this->form_validation->set_rules('bug_page_title', 'Bug page title', 'required|max_length[255]');
+			$this->form_validation->set_rules('bug_cms_id', 'Bug CMS ID', 'integer|max_length[20]');
+			$this->form_validation->set_rules('bug_region', 'Bug region', 'required|max_length[125]');
+			$this->form_validation->set_rules('bug_description', 'Bug description', 'required|max_length[555]');
+			$this->form_validation->set_rules('bug_status', 'Bug status', 'required|max_length[255]');
+			$this->form_validation->set_rules('bug_priority', 'Bug priority', 'required|max_length[12]');
+			$this->form_validation->set_rules('bug_developer', 'Bug developers', 'required|max_length[125]');
+			$this->form_validation->set_rules('bug_is_complete', 'Bug is complete?', 'required|max_length[125]');
+
 			if($this->form_validation->run()){
 				
 				$id = $this->uri->segment(3);
+				$time = time();
+				$datestring = "%d/%m/%Y";
 
 				$data = array(
 					'bug_title' => $this->input->post('bug_title'),
@@ -179,8 +207,12 @@ class Bug_control extends CI_Controller{
 					'bug_description' => $this->input->post('bug_description'),
 					'bug_status' => $this->input->post('bug_status'),
 					'bug_priority' => $this->input->post('bug_priority'),
+					'bug_developer' => $this->input->post('bug_developer'),
+					'bug_is_complete' => $this->input->post('bug_is_complete'),
 					'bug_last_modified' => mdate($datestring, $time)
 					);
+
+				redirect('bug_control/');
 
 			/* End of data array */
 
@@ -197,12 +229,7 @@ class Bug_control extends CI_Controller{
 
 	public function edit_by_id(){
 		
-		if($this->session->userdata('is_logged_in')){
 
-			$this->load->view('update_bug_view');
-		}else{
-			redirect('core/restricted');
-		}
 	}
 
 	/* Display datasets */
@@ -213,8 +240,10 @@ class Bug_control extends CI_Controller{
 		$this->load->view('nav_view');
 
 		if($this->session->userdata('is_logged_in')){
-			$this->data['results'] = $this->bug_control_model->get_completed();
-			$this->load->view('completed_bugs_view', $this->data);
+			
+			$this->data['results'] = $this->bug_control_model->get_complete();
+			$this->load->view('display_completed_bugs', $this->data);
+
 		}else{
 			redirect('core/restricted');
 		}
@@ -230,7 +259,7 @@ class Bug_control extends CI_Controller{
 		if($this->session->userdata('is_logged_in')){
 
 			$this->data['results'] = $this->bug_control_model->get_outstanding();
-			$this->load->view('display_outstanding_bugs_view', $this->data);
+			$this->load->view('display_outstanding_bugs', $this->data);
 
  		}else{
 			redirect('core/restricted');
@@ -238,8 +267,6 @@ class Bug_control extends CI_Controller{
 
 		$this->load->view('footer');
 	}
-
-
 }
 
 /* End of class Bug_control (extends CI_Controller) */

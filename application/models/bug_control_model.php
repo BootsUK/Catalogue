@@ -19,7 +19,7 @@ class Bug_control_model extends CI_Model{
 
 	public function add_bug($data){
 
-		$query = $this->db->insert('bug_control');
+		$query = $this->db->insert('bug_control', $data);
 
 		if($query){
 			return true;
@@ -55,7 +55,7 @@ class Bug_control_model extends CI_Model{
 	public function get_outstanding(){
 
 		$this->db->where('bug_is_complete', '0');
-		$this->db->get('bug_control');
+		$query = $this->db->get('bug_control');
 
 		if($query->num_rows() > 0){
 			return $query->result_array();
@@ -67,7 +67,7 @@ class Bug_control_model extends CI_Model{
 	public function get_complete(){
 
 		$this->db->where('bug_is_complete', '1');
-		$this->db->get('bug_control');
+		$query = $this->db->get('bug_control');
 
 		if($query->num_rows() > 0){
 			return $query->result_array();

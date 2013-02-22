@@ -1,4 +1,4 @@
-<h3>Completed bugs</h3>
+<h3>Outstanding bugs</h3>
 
 <table class="sortable">
 	<thead>
