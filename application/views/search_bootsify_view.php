@@ -6,7 +6,7 @@
 	<input type="text" name="search" id="search" placeholder="Search">
 
 	<br>
-
+	
 	<input type="submit" name="submit" value="Submit">
  
 </form>

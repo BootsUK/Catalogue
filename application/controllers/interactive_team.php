@@ -456,11 +456,9 @@ class Interactive_team extends CI_Controller{
 		if($this->session->userdata('is_logged_in')){
 
 			$id = $this->uri->segment(3);
-			$data['results'] = $this->interactive_team_model->delete_bootsify_by_id($id);
+			$this->interactive_team_model->delete_bootsify_by_id($id);
 
-			$this->load->view('deletion_successfull_view');
-
-			redirect('interactive_team/bootsify_search_load');
+			redirect('interactive_team/bootsify_search');
 		}else{
 			redirect('core/restricted');
 		}
@@ -468,16 +466,16 @@ class Interactive_team extends CI_Controller{
 		$this->load->view('footer');
 	}
 
-	public function edit_by_bootsify_id_form(){
+	public function edit_bootsify_by_id_form(){
 
 		$this->load->view('header');
 
 		if($this->session->userdata('is_logged_in')){
 
-			$id = $this->uri->segment(3);
-			$this->data['results'] = $this->interactive_team_model->get_bootsify_by_id($id);
+			// $id = $this->uri->segment(3);
+			// $this->data['results'] = $this->interactive_team_model->get_bootsify_by_id($id);
 
-			$this->load->view('edit_bootsify_form_view', $this->data);
+			// $this->load->view('edit_bootsify_form_view', $this->data);
 
 		}else{
 			redirect('core/restricted');
@@ -496,14 +494,11 @@ class Interactive_team extends CI_Controller{
 				'title' => $this->input->post('title'),
 				'teaser' => $this->input->post('teaser'),
 				'body' => $this->input->post('body'),
-				'template' = $this->input->post('template')
+				'template' => $this->input->post('template')
 				);
 
 			if($this->interactive_team_model->update_bootsify_by_id($data)){
 				$this->load->view('successfully_updated_view');
-
-				redirect('interactive_team/bootisfy_search');
-
 			}else{
 				echo "This update failed";
 			}
@@ -511,6 +506,5 @@ class Interactive_team extends CI_Controller{
 
 		$this->load->view('footer');
 	}
-
 
 }

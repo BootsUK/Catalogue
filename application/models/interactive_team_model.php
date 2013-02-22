@@ -206,4 +206,28 @@ class Interactive_team_model extends CI_Model{
 			return false;
 		}
 	}
+
+	public function delete_bootsify_by_id($id){
+
+		$this->db->where('id', $id);
+		$query = $this->db->delete('bootsify');
+
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	public function edit_bootsify_by_id($id){
+
+		$this->db->where('id', $id);
+		$query = $this->db->update('bootsify');
+
+		if($query){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }
