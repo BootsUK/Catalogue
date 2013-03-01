@@ -267,6 +267,38 @@ class Bug_control extends CI_Controller{
 
 		$this->load->view('footer');
 	}
+
+	public function search_bugs(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+			$this->load->view('search_bugs_view');
+		}else{
+			redirect('core/restricted');
+		}
+
+		$this->load->view('footer');
+	}
+
+	public function search_bugs_logic(){
+
+		$this->load->view('header');
+		$this->load->view('nav_view');
+
+		if($this->session->userdata('is_logged_in')){
+
+			$search = $this->input->post('search');
+			$this->data['results'] = $this->bug_control_model->get_buts_by_title($search);
+
+			$this->load->view('display_outstanding_bugs', $this->data);
+		}else{
+			redirect('core/restricted');
+		}
+
+		$this->load->view('footer');
+	}
 }
 
 /* End of class Bug_control (extends CI_Controller) */

@@ -26,7 +26,7 @@ function confirm_action(action, id){
 	}
 
 	if(r == true){
-		window.location="http://evdatacenter.co.uk/boots/blog/" + action + "/" + id; 
+		window.location=<?php echo base_url(); ?>"/blog/" + action + "/" + id; 
 	}
 }
 

@@ -48,7 +48,7 @@ function confirm_action(action, id){
 	}
 
 	if(r == true){
-		window.location="http://evdatacenter.co.uk/boots/interactive_team/" + action + "/" + id;
+		window.location="http://bootsbeauty.co.uk/smc/interactive_team/" + action + "/" + id;
 	}
 }
 

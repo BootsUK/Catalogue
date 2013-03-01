@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://evdatacenter.co.uk/boots/';
+$config['base_url']	= 'http://bootsbeauty.co.uk/smc/';
 
 /*
 |--------------------------------------------------------------------------

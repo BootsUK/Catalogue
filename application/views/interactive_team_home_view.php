@@ -4,7 +4,7 @@
 
 <br>
 
-<p><a href="http://evdatacenter.co.uk/boots/developers_center/wish_list">Feature wish list</a></p>
+<p><a href="<?php echo base_url(); ?>developers_center/wish_list">Feature wish list</a></p>
 
 <br>
 
@@ -53,7 +53,7 @@ function confirm_action(action, id){
 	}
 
 	if(r == true){
-		window.location="http://evdatacenter.co.uk/boots/interactive_team/" + action + "/" + id;
+		window.location="http://bootsbeauty.co.uk/smc/interactive_team/" + action + "/" + id;
 	}
 }
 
